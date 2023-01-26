@@ -1,0 +1,31 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-breadcrumbs {
+  align-items: center;
+  @include display-flex();
+  li {
+    align-items: center;
+    @include display-flex();
+    &:not(:first-child) {
+      &::before {
+        display: inline-block;
+        content: '';
+        height: 14px;
+        margin: 0 10px;
+        border-right: solid 1px transparent;
+      }
+    }
+    a, span, i {
+      font-size: 12px;
+    }
+    a {
+      align-items: center;
+      @include display-flex();
+    }
+    i {
+      margin-top: -2px;
+    }
+  }
+}

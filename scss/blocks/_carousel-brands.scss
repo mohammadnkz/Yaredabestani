@@ -1,0 +1,38 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-carousel-brands {
+  @media only screen and (max-width: $screen-sm-down) {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  @media only screen and (min-width: $screen-sm) {
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+  &__wrap {
+    overflow: hidden;
+  }
+  .slick-track {
+    align-items: center;
+    @include display-flex();
+  }
+  a {
+    outline: none;
+    @include opacity(0.3);
+    @media only screen and (max-width: $screen-sm-down) {
+      margin-left: 12px;
+      margin-right: 12px;
+    }
+    @media only screen and (min-width: $screen-sm) {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+    &:hover {
+      @media only screen and (min-width: $screen-sm) {
+        @include opacity(1);
+      }
+    }
+  }
+}

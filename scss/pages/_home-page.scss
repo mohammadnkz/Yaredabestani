@@ -1,0 +1,62 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-home {
+  &__promobox {
+    &-01 {
+
+    }
+    &-02 {
+      margin-top: 100px;
+      margin-bottom: 90px;
+    }
+    &-03 {
+      margin-top: 24px;
+      margin-bottom: 66px;
+      .tt-promobox {
+        margin-bottom: 24px;
+      }
+    }
+    &-04 {
+      margin-bottom: 90px;
+    }
+  }
+  &__brands {
+    &-01 {
+      margin-top: 50px;
+      margin-bottom: 90px;
+    }
+    &-02 {
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+  }
+  &__carousel {
+    &-product {
+      margin-bottom: 100px;
+    }
+    &-blog {
+      margin-bottom: 100px;
+    }
+  }
+  &__shipping-info {
+    &-01 {
+      @media only screen and (max-width: $screen-sm-down) {
+        margin-bottom: 40px;
+      }
+    }
+    &-02 {
+
+    }
+    &-03 {
+      margin-bottom: 100px;
+    }
+  }
+  &__post-img {
+    &-01 {
+      margin-top: 100px;
+      margin-bottom: 90px;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+$screen-opt-vw-bp: 1200px;
+$screen-opt-vw-bp-mob: 580px;
+
+.tt-vw-opt {
+  &__grid {
+
+  }
+  &__length,
+  &__sort,
+  &__direction {
+    align-items: center;
+    @include display-flex();
+  }
+  &__length,
+  &__sort {
+    & > span {
+      margin-right: 10px;
+      font-weight: $fw--bold;
+    }
+  }
+  &__length {
+    margin-right: 16px;
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+    }
+    select {
+      min-width: 86px;
+    }
+  }
+  &__sort {
+    margin-right: 24px;
+    select {
+      @media only screen and (min-width: $screen-xl) {
+        min-width: 350px;
+      }
+      @media only screen and (min-width: $screen-lg) and (max-width: $screen-xl) {
+        min-width: 250px;
+      }
+      @media only screen and (min-width: $screen-xs) and (max-width: $screen-lg-down) {
+        min-width: 180px;
+      }
+      @media only screen and (max-width: $screen-xs-down) {
+        min-width: 130px;
+      }
+    }
+  }
+  &__direction {
+    a {
+      i {
+        margin-right: 6px;
+        font-size: 19px;
+      }
+    }
+  }
+  &__sort,
+  &__direction,
+  &__length,
+  &__grid {
+    @media only screen and (max-width: $screen-sm-down) {
+      margin-top: 20px;
+    }
+  }
+  &__info {
+    @media only screen and (min-width: $screen-md) and (max-width: $screen-opt-vw-bp) {
+      margin-top: 20px;
+    }
+    & > span {
+      font-size: $font-size--sm;
+    }
+  }
+  & > .row {
+    & > [class^='col-'] {
+      align-items: center;
+      @include display-flex();
+      &:nth-child(1) {
+        @media only screen and (min-width: $screen-md) and (max-width: $screen-opt-vw-bp) {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+      }
+      &:nth-child(2) {
+        @media only screen and (min-width: $screen-md) and (max-width: $screen-opt-vw-bp) {
+          order: 1;
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+        @media only screen and (max-width: $screen-sm-down) {
+          order: -1;
+        }
+      }
+      &:nth-child(3) {
+        justify-content: flex-end;
+        @media only screen and (min-width: $screen-md) and (max-width: $screen-opt-vw-bp) {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+      }
+    }
+  }
+}

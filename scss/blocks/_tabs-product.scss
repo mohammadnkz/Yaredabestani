@@ -1,0 +1,82 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-tabs-product {
+  .tt-tabs__content {
+    max-width: 830px;
+    @media only screen and (min-width: $screen-md) {
+      padding: 50px 60px;
+    }
+  }
+  p {
+    margin-top: 18px;
+    font-weight: $fw--regular;
+    &:first-of-type {
+      @media only screen and (max-width: $screen-md-down) {
+        margin-top: 0;
+      }
+    }
+  }
+  &__list {
+    margin-top: 18px;
+    list-style-type: disc;
+    padding-left: 18px;
+    li {
+      font-size: $font-size--lg;
+      span {
+        font-size: $font-size;
+        font-weight: $fw--bold;
+      }
+    }
+  }
+  table.table {
+    margin-bottom: 0;
+    @media only screen and (min-width: $screen-md) {
+      margin-top: 12px;
+    }
+    tr {
+      &:first-child {
+        td {
+          border-top: none;
+        }
+      }
+      td {
+        padding: 10px 0;
+        font-weight: $fw--bold;
+        &:first-child {
+          padding-right: 15px;
+          @media only screen and (min-width: $screen-xs) {
+            width: 260px;
+          }
+        }
+      }
+    }
+  }
+  &__tags {
+    display: table;
+    margin: 0 -6px;
+    font-size: 0;
+    @media only screen and (max-width: $screen-md-down) {
+      margin-top: 12px;
+    }
+    @media only screen and (min-width: $screen-md) {
+      margin-top: 22px;
+    }
+    a {
+      height: 44px;
+      padding: 0 24px;
+      margin: 0 6px;
+      margin-bottom: 12px;
+      font-weight: $fw--bold;
+      font-size: $font-size--sm;
+      @include display-inline-flex();
+      @include _flex-center();
+    }
+  }
+  &__review {
+    .spr-summary-actions-newreview:hover {
+      text-decoration: underline;
+    }
+  }
+}

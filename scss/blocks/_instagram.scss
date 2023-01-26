@@ -1,0 +1,53 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-instagram {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  &::before {
+    display: block;
+    content: '';
+    padding-bottom: 100%;
+  }
+  img {
+    position: absolute;
+    width: 100%;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+  }
+  &__mask {
+    @media only screen and (min-width: $screen-md) {
+      position: absolute;
+      @include _stretch-block();
+      @include _flex-center();
+      @include display-flex();
+      @include opacity(0);
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+    }
+    &::before {
+      @media only screen and (min-width: $screen-md) {
+        content: '';
+        display: block;
+        position: absolute;
+        @include _stretch-block();
+        @include opacity(0.8);
+      }
+    }
+    i {
+      @media only screen and (min-width: $screen-md) {
+        position: relative;
+        font-size: 37px;
+      }
+    }
+  }
+  &:hover &__mask {
+    @media only screen and (min-width: $screen-md) {
+      @include opacity(1);
+    }
+  }
+}

@@ -1,0 +1,54 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+$animation-qv-in: 500ms;
+$animation-qv-uot: 300ms;
+
+//with-zoom
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  @include opacity(0);
+  -webkit-backface-visibility: hidden;
+}
+.mfp-with-zoom .mfp-container {
+  @include scale(0.6);
+}
+.mfp-with-zoom.mfp-ready .mfp-container {
+  @include opacity(1);
+  @include scale(1);
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+  @include opacity(0.9);
+}
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  @include opacity(0);
+}
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  @include opacity(0);
+}
+.mfp-with-zoom.mfp-removing .mfp-container {
+  @include scale(0.6);
+}
+
+//custom
+.mfp-bg,
+.mfp-wrap {
+  z-index: 10000000 !important;
+}
+
+.mfp-wrap {
+  cursor: default;
+  .mfp-content {
+    & > .tt-product-head__video {
+      display: block;
+    }
+  }
+  .mfp-close {
+    font-size: 15px;
+    @media only screen and (min-width: $screen-sm) {
+      @include square(56px);
+    }
+  }
+}

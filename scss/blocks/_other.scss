@@ -1,0 +1,95 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+/* review start icon */
+[class^="spr-icon-"]:before,
+[class*=" spr-icon-"]:before {
+  font-family: myfont !important;
+  font-style: normal;
+  font-weight: 400;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0;
+}
+.spr-icon-star:before {
+  content: '\e878' !important;
+  font-size: 16px !important;
+}
+.spr-icon-star-empty:before {
+  content: '\e878' !important;
+  font-size: 16px !important;
+  color: #b7b7b7 !important;
+}
+.spr-icon-star-half-alt:before {
+  content: '\e878' !important;
+  font-size: 16px !important;
+  opacity: 0.5;
+}
+
+.tt-product-view .spr-badge-caption {
+  display: none;
+}
+.spr-badge-caption {
+  margin-right: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fe5a1a;
+  padding-left: 10px;
+}
+
+/* END review start icon */
+
+
+/* Pagination */
+.tt-pagination a.active {
+  color: #777;
+}
+/* END Pagination */
+
+
+/* Article page */
+.tt-post-text__footer {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+/* END Article page*/
+
+
+/* MegaMenu paddings */
+.TonyM__mm--pdg-only-c .TonyM__bx-t,
+.TonyM__mm--pdg-only-c .TonyM__bx-b {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin: 0 !important;
+}
+
+.TonyM__mm--pdg-only-c .TonyM__bx-l,
+.TonyM__mm--pdg-only-c .TonyM__bx-l {
+  padding: 0 !important;
+}
+
+/* END MegaMenu paddings */
+
+
+.note {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.note--success {
+  border-color: green;
+  background-color: lightgreen;
+}
+
+.note--error {
+  border-color: red;
+  background-color: lightred;
+}

@@ -1,0 +1,66 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.irs {
+  margin: 24px 0;
+  & &-line {
+    &,
+    span {
+      height: 6px;
+      background: none;
+    }
+  }
+  & &-bar {
+    height: 6px;
+    background: none;
+  }
+  & &-from,
+  & &-to,
+  & &-single,
+  & &-min,
+  & &-max {
+    top: -18px;
+    height: 26px;
+    bottom: 36px;
+    border-radius: 0;
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+  }
+  & &-from,
+  & &-to,
+  & &-single {
+    min-width: 60px;
+    padding: 4px 12px;
+    text-align: center;
+    &::after {
+      border-width: 8px;
+      top: 23px;
+      margin-left: -8px;
+    }
+  }
+  & &-min,
+  & &-max {
+    font-weight: $fw--bold;
+    background-color: transparent;
+  }
+  & &-min {
+    padding: 4px 4px 4px 0;
+    text-align: left;
+  }
+  & &-max {
+    padding: 4px 0 4px 4px;
+    text-align: right;
+  }
+  & &-slider {
+    width: 20px;
+    height: 20px;
+    top: 18px;
+    background: none;
+    border-radius: 50%;
+    border: solid 2px transparent;
+    cursor: pointer;
+  }
+}
+
+

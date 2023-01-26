@@ -1,0 +1,127 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-cart {
+  margin-bottom: 100px;
+  .btn {
+    i {
+      margin-right: 4px;
+      font-size: 20px;
+    }
+  }
+  &__caption {
+    padding: 8px 0;
+    border-top: solid 1px transparent;
+    border-bottom: solid 1px transparent;
+    @media only screen and (max-width: $screen-sm-down) {
+      display: none;
+    }
+    span {
+      font-weight: $fw--bold;
+      font-size: $font-size--sm;
+    }
+  }
+  &__list {
+    padding-bottom: 40px;
+    margin-bottom: 32px;
+    border-bottom: solid 1px transparent;
+    @media only screen and (min-width: $screen-sm-down) {
+      padding-top: 40px;
+    }
+  }
+  &__product {
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+    [class^='col-'] {
+      align-items: center;
+      @include display-flex();
+      &:first-child {
+        @media only screen and (max-width: $screen-sm-down) {
+          margin-bottom: 16px;
+        }
+      }
+      &.text-center {
+        @media only screen and (min-width: $screen-xs) {
+          justify-content: center;
+        }
+      }
+    }
+    &_info {
+      flex-direction: column;
+      @include display-flex();
+      @media only screen and (max-width: $screen-sm-down) {
+        margin-right: 12px;
+      }
+      p {
+        margin-bottom: 0;
+      }
+      & > p {
+        font-size: 12px;
+        &:first-of-type {
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        & > span {
+          span {
+            font-weight: $fw--bold;
+          }
+        }
+      }
+      a {
+        p {
+          font-size: $font-size--sm;
+          font-weight: $fw--bold;
+        }
+      }
+    }
+    &_price {
+      @media only screen and (min-width: $screen-sm) {
+        font-size: 24px;
+      }
+      @media only screen and (max-width: $screen-sm-down) {
+        font-size: 18px;
+      }
+    }
+    &_del {
+      @media only screen and (min-width: $screen-lg) {
+        margin-right: 40px;
+      }
+      @media only screen and (max-width: $screen-lg-down) {
+        margin-right: 12px;
+      }
+      @media only screen and (max-width: $screen-sm-down) {
+        margin-left: auto;
+        order: 1;
+      }
+    }
+    &_image {
+      display: block;
+      width: 130px;
+      min-width: 130px;
+      @media only screen and (min-width: $screen-lg) {
+        margin-right: 40px;
+      }
+      @media only screen and (max-width: $screen-lg-down) {
+        margin-right: 12px;
+      }
+      @media only screen and (max-width: $screen-sm-down) {
+        order: -1;
+      }
+      img {
+        border: solid 2px transparent;
+      }
+    }
+  }
+  &__footer {
+    form {
+      margin-bottom: 20px;
+      @include display-flex();
+    }
+    .btn {
+      min-height: 46px;
+      margin-left: 20px;
+    }
+  }
+}

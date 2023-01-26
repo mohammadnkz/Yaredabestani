@@ -1,0 +1,72 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-giftcard {
+  margin-bottom: 114px;
+  text-align: center;
+  &__logo,
+  &__image,
+  &__qr {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  &__logo {
+
+  }
+  &__image {
+    position: relative;
+    width: 440px;
+    @media (max-width: $screen-md-down) {
+      margin-top: 40px;
+    }
+    @media (min-width: $screen-md) {
+      margin-top: 70px;
+    }
+    img {
+      border-radius: 10px;
+    }
+  }
+  &__qr {
+    width: 122px;
+  }
+  &__code {
+    width: 330px;
+    max-width: 100%;
+    min-height: 62px;
+    padding: 6px;
+    border-radius: 4px;
+    @media (max-width: $screen-md-down) {
+      margin: 20px auto;
+    }
+    @media (min-width: $screen-md) {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      @include translateX(-50%);
+    }
+    span {
+      padding: 8px;
+      height: 100%;
+      border: dashed 1px #e8e9eb;
+      align-items: center;
+      justify-content: center;
+      @include display-flex();
+      @include _style-h5();
+    }
+  }
+  .btn {
+    min-width: 194px;
+    max-width: 100%;
+  }
+  &__btn-shopping {
+    i {
+      margin-top: 2px;
+      font-size: $font-size--lg;
+    }
+    & > * {
+      margin-left: 12px;
+    }
+  }
+}

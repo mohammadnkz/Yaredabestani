@@ -1,0 +1,102 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-newsletter-popup {
+  display: none;
+  position: relative;
+  width: 586px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  @media only screen and (min-width: $screen-xs) {
+    padding: 70px 60px;
+  }
+  @media only screen and (max-width: $screen-xs-down) {
+    padding: 30px 30px;
+  }
+  & > p {
+    font-weight: $fw--regular;
+    margin-bottom: 42px;
+  }
+  &__text-01 {
+    margin-bottom: 12px;
+    text-align: left;
+    @include display-inline-flex();
+    span {
+      display: block;
+      line-height: 0.8;
+      font-weight: $fw--extra-bold;
+      &:nth-child(1) {
+        @media only screen and (min-width: $screen-xs) {
+          font-size: 140px;
+        }
+        @media only screen and (max-width: $screen-xs-down) {
+          font-size: 70px;
+        }
+      }
+      &:nth-child(2) {
+        span {
+          &:nth-child(1) {
+            line-height: 1.1;
+            @media only screen and (min-width: $screen-xs) {
+              font-size: 50px;
+            }
+            @media only screen and (max-width: $screen-xs-down) {
+              font-size: 25px;
+            }
+          }
+          &:nth-child(2) {
+            text-transform: uppercase;
+            line-height: 0.65;
+            @media only screen and (min-width: $screen-xs) {
+              font-size: 80px;
+            }
+            @media only screen and (max-width: $screen-xs-down) {
+              font-size: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__text-02 {
+    p {
+      font-weight: $fw--bold;
+      @media only screen and (min-width: $screen-xs) {
+        font-size: 30px;
+        line-height: 42px;
+      }
+      @media only screen and (max-width: $screen-xs-down) {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+  }
+  &__newsletter{
+    margin-bottom: 30px;
+  }
+  &__social {
+    margin-bottom: 30px;
+    .tt-btn {
+      @media only screen and (max-width: $screen-xs-down) {
+        @include square(42px);
+      }
+      i::before {
+        @media only screen and (max-width: $screen-xs-down) {
+          font-size: $font-size--lg;
+        }
+      }
+    }
+  }
+  &__show_popup {
+    font-weight: $fw--regular;
+    @media only screen and (min-width: $screen-xs) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.mfp-content .tt-newsletter-popup {
+  display: block;
+}

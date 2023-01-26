@@ -1,0 +1,26 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+body {
+  font-family: $font;
+}
+
+.tt-label__new,
+.tt-label__hot,
+.tt-label__sale,
+.tt-label__out-stock,
+.tt-label__in-stock,
+.tt-label__discount,
+.tt-counter input,
+.tt-product-head__countdown .countdown-row,
+.tt-product__countdown .countdown-row,
+.tt-promobox__quantity,
+.tt-tabs-product__tags a {
+  font-family: $font2;
+}
+
+.tt-footer__copyright,
+.tt-comming-soon__copyright p {
+  font-family: $font3;
+}

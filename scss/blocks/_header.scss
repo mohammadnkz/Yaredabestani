@@ -1,0 +1,843 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+//header
+.tt-header {
+  position: relative;
+  z-index: 10000;
+  &__spacer {
+    display: none;
+    &#{&}--visible {
+      display: block;
+      position: relative;
+      width: 100%;
+    }
+  }
+  &__sticky {
+    position: fixed !important;
+    width: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+  &__tape {
+    position: relative;
+    width: 100%;
+    font-size: 12px;
+    @media only screen and (min-width: $screen-md) {
+      min-height: 45px;
+      padding: 8px 58px;
+      flex-wrap: wrap;
+      align-items: center;
+      @include display-flex();
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+      padding: 8px 12px;
+      z-index: 1;
+    }
+    &-text {
+      @include display-flex();
+      @media only screen and (min-width: $screen-md) {
+        margin: 4px 12px 4px 0;
+      }
+      @media only screen and (max-width: $screen-md-down) {
+        margin: 6px 0;
+        justify-content: center;
+      }
+      i {
+        margin-right: 6px;
+        font-size: 13px;
+      }
+      span {
+        font-weight: $fw--extra-bold;
+      }
+    }
+    &-social {
+      @media only screen and (min-width: $screen-md) {
+        margin-left: auto;
+        margin-right: -6px;
+      }
+      @media only screen and (max-width: $screen-md-down) {
+        text-align: center;
+      }
+      .tt-btn {
+        margin: 0 6px;
+        border: none !important;
+        @include square(24px);
+        i::before {
+          font-size: $font-size;
+        }
+      }
+    }
+  }
+  &__btn-info {
+    @media only screen and (min-width: $screen-md) {
+      display: none;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      position: absolute;
+      width: 60px;
+      height: 100%;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+    i {
+      @media only screen and (max-width: $screen-md-down) {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        margin-top: -8px;
+        margin-right: 4px;
+        border-right: solid 3px transparent;
+        border-bottom: solid 3px transparent;
+        @include square(12px);
+        @include rotate(45deg);
+      }
+    }
+    &--open i {
+      @media only screen and (max-width: $screen-md-down) {
+        margin-top: -4px;
+        @include transform(rotate3d(10, -4, 0, 180deg));
+      }
+    }
+  }
+  &__content {
+    position: relative;
+    @include display-flex();
+    @media only screen and (max-width: $screen-md-down) {
+      flex-wrap: wrap;
+    }
+  }
+  &__logo {
+    position: relative;
+    z-index: 1;
+    @include display-flex();
+    @include _flex-center();
+    @media only screen and (min-width: $screen-md) {
+      min-width: 250px;
+      width: 250px;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      width: 100%;
+      min-height: 80px;
+    }
+    & > .tt-logo {
+      margin: 0;
+      margin-top: 8px;
+      line-height: 1;
+      font-size: $font-size;
+      font-weight: $fw--bold;
+    }
+  }
+  &__nav {
+    position: relative;
+    width: 100%;
+    @include display-flex();
+  }
+  &__menu {
+    @include display-flex();
+    @media only screen and (max-width: $screen-md-down) {
+      width: 0;
+    }
+  }
+
+  //start: options
+  &__sidebar {
+    position: relative;
+    z-index: 1000003;
+    @media only screen and (min-width: $screen-md) {
+      padding-right: 58px;
+      margin-left: auto;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      width: 100%;
+      height: 66px;
+    }
+  }
+  &__options {
+    height: 100%;
+    justify-content: center;
+    @include display-flex();
+    @media only screen and (min-width: 1281px) {
+      margin-right: -18px;
+    }
+    @media only screen and (min-width: $screen-md) and (max-width: 1280px) {
+      margin-right: -12px;
+    }
+  }
+
+  //start: options buttons
+  &__btn {
+    position: relative;
+    height: 100%;
+    @include display-flex();
+    @include _flex-center();
+    @include backface-visibility(hidden);
+    @media only screen and (min-width: 1281px) {
+      padding: 12px 18px;
+    }
+    @media only screen and (min-width: $screen-md) and (max-width: 1280px) {
+      padding: 12px 12px;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      width: 62px;
+      min-height: 66px;
+    }
+    & > i {
+      cursor: pointer;
+      &::before {
+        margin: 0;
+      }
+      &.icon-menu {
+        font-size: 18px;
+      }
+      &.icon-heart-empty-2 {
+        font-size: 22px;
+        @media only screen and (max-width: $screen-md-down) {
+          margin-top: 2px;
+        }
+      }
+      &.icon-shop24 {
+        font-size: 32px;
+      }
+      &.icon-user-outline {
+        font-size: 26px;
+      }
+      &.icon-cog {
+        font-size: 21px;
+      }
+      &.icon-search {
+        font-size: 18px;
+      }
+      &.icon-cancel-1 {
+        font-size: 15px;
+      }
+    }
+    //count
+    & > span {
+      display: block;
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      margin-bottom: 8px;
+      margin-left: 8px;
+      border-radius: 50%;
+      font-weight: $fw--bold;
+      text-align: center;
+      @media only screen and (min-width: $screen-md) {
+        font-size: $font-size--sm;
+        @include square(24px);
+      }
+      @media only screen and (max-width: $screen-md-down) {
+        font-size: 12px;
+        @include square(20px);
+      }
+    }
+  }
+  &__content#{&}__sticky &__btn,
+  &__menu#{&}__sticky &__btn {
+    & > span {
+      @media only screen and (min-width: $screen-md) {
+        font-size: 12px;
+        @include square(20px);
+      }
+    }
+  }
+  &__btn-menu {
+    @media only screen and (min-width: $screen-md) {
+      display: none;
+    }
+  }
+  &__btn-open-search {
+    @media only screen and (min-width: $screen-md) {
+      margin-left: auto;
+    }
+  }
+  &__btn-close-search {
+    @media only screen and (max-width: $screen-md-down) {
+      margin-right: 24px;
+    }
+  }
+  &--search &__btn:not(.tt-header__btn-close-search) {
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+    }
+  }
+  &--search &__btn-open-search {
+    display: none;
+  }
+  &:not(.tt-header--search) &__btn-close-search {
+    display: none;
+  }
+  &__btn {
+    @media only screen and (max-width: $screen-md-down) {
+      width: auto;
+    }
+  }
+  &__options > * {
+    @media only screen and (max-width: $screen-md-down) {
+      width: 62px;
+    }
+  }
+  //end: options buttons
+
+  //start: popups
+  &--search &__sidebar {
+    @media only screen and (min-width: $screen-md) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      right: 0;
+      justify-content: flex-end;
+    }
+  }
+  &--search &__search {
+    width: 100%;
+    @include display-flex();
+    @media only screen and (min-width: $screen-md) {
+      position: relative;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      position: absolute;
+      right: 0;
+      height: 100%;
+    }
+  }
+  &__search-form {
+    width: 100%;
+    align-items: center;
+    @include display-flex();
+    @media only screen and (min-width: $screen-md) {
+      margin-right: 20px;
+    }
+    @media only screen and (min-width: $screen-md) and (max-width: $screen-lg-down) {
+      padding-left: 12px;
+    }
+    @media only screen and (min-width: $screen-lg) {
+      padding-left: 40px;
+    }
+  }
+  &:not(.tt-header--search) &__search-form {
+    display: none;
+  }
+  &__search-dropdown {
+    position: absolute;
+    padding: 60px;
+    width: 100%;
+    min-height: 100px;
+    top: 100%;
+    left: 0;
+    overflow: auto;
+    @media only screen and (max-width: $screen-sm-down) {
+      padding: 20px;
+    }
+    & > div {
+      align-items: baseline;
+      @include display-flex();
+      &:not(:first-child):not([class^="ps__"]) {
+        margin-top: 30px;
+        @media only screen and (max-width: $screen-xs-down) {
+          margin-top: 20px;
+        }
+      }
+      a:first-child {
+        margin-right: 20px;
+      }
+      img {
+        width: 104px;
+        height: auto;
+        border: solid 2px transparent;
+        @media only screen and (max-width: $screen-xs-down) {
+          width: 60px;
+        }
+      }
+      p {
+        font-size: $font-size--lg;
+        font-weight: $fw--bold;
+        @media only screen and (max-width: $screen-xs-down) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  &:not(.tt-header--search) &__search-dropdown,
+  &__search-dropdown:not(.tt-header__search-dropdown--open) {
+    display: none;
+  }
+  &__search-empty p {
+    margin: 18px 0;
+  }
+  &--search &__menu > .TonyM {
+    @media only screen and (min-width: $screen-md) {
+      display: none;
+    }
+  }
+  &__login {
+    @media only screen and (min-width: $screen-md) {
+      margin-top: 20px;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      padding: 40px 22px;
+    }
+    h6 {
+      font-size: $font-size;
+    }
+    form,
+    form > *:not(:first-child) {
+      margin-top: 20px;
+    }
+    div {
+      @media only screen and (max-width: $screen-md-down) {
+        text-align: right;
+      }
+    }
+  }
+  &__cart {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    overflow-y: auto;
+    -ms-overflow-y: auto;
+    @media only screen and (min-width: $screen-md) {
+      width: 550px;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      width: 100%;
+      border-top: solid 1px transparent;
+    }
+    &-example {
+      display: none !important;
+    }
+    &-empty {
+      margin-top: 0 !important;
+    }
+    ul {
+      position: relative;
+      min-height: 100px;
+      border-bottom: solid 1px transparent;
+      @media only screen and (min-width: $screen-md) {
+        padding: 40px 40px;
+      }
+      @media only screen and (max-width: $screen-md-down) {
+        padding: 38px 18px 40px;
+      }
+      li {
+        margin: 0 -10px;
+        @include display-flex();
+        &:not(:first-child) {
+          margin-top: 40px;
+        }
+        & > div {
+          padding: 0 10px;
+          &:nth-of-type(1) {
+
+          }
+          &:nth-of-type(2) {
+            @media only screen and (min-width: $screen-md) {
+              max-width: 280px;
+            }
+          }
+          &:nth-child(3) {
+            min-width: 72px;
+            margin-left: auto;
+          }
+        }
+        img {
+          width: 104px;
+          height: auto;
+          border: solid 2px transparent;
+          @media only screen and (max-width: $screen-xs-down) {
+            width: 76px;
+          }
+        }
+        p {
+          margin-right: 20px;
+          @media only screen and (min-width: $screen-md) {
+            margin-bottom: 20px;
+          }
+          @media only screen and (min-width: $screen-xs) and (max-width: $screen-md-down) {
+            margin-bottom: 10px;
+          }
+          @media only screen and (max-width: $screen-md-down) {
+            margin-bottom: 6px;
+          }
+          a {
+            font-weight: $fw--bold;
+            @media only screen and (min-width: $screen-xs) {
+              font-size: $font-size--sm;
+            }
+            @media only screen and (max-width: $screen-xs-down) {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    &-price {
+      display: block;
+      font-size: $font-size--sm;
+      font-weight: $fw--bold;
+      @media only screen and (min-width: $screen-xs) {
+        margin-bottom: 8px;
+      }
+      @media only screen and (max-width: $screen-xs-down) {
+        margin-bottom: 4px;
+      }
+      span {
+        margin-right: 2px;
+      }
+      &-count {
+
+      }
+      &-val {
+        font-size: 20px;
+        font-weight: $fw--extra-bold;
+      }
+    }
+    &-color {
+      display: block;
+      font-size: 12px;
+      font-weight: $fw--regular;
+      span {
+        font-weight: $fw--extra-bold;
+      }
+    }
+    &-size {
+      display: block;
+      font-size: 12px;
+      font-weight: $fw--regular;
+      span {
+        font-weight: $fw--extra-bold;
+      }
+    }
+    .tt-counter {
+      margin-top: 16px;
+    }
+    &-edit,
+    &-delete {
+      display: block;
+      float: left;
+      i::before {
+        margin: 0;
+      }
+    }
+    &-edit {
+      margin-right: 20px;
+    }
+    &-delete {
+
+    }
+    &-footer {
+      overflow: hidden;
+      @media only screen and (min-width: $screen-md) {
+        padding: 32px 40px 40px;
+      }
+      @media only screen and (max-width: $screen-md-down) {
+        padding: 28px 18px 42px;
+      }
+    }
+    &-subtotal {
+      display: block;
+      margin-bottom: 26px;
+      font-weight: $fw--bold;
+      font-size: $fs--h5;
+      span {
+        margin-left: 10px;
+      }
+    }
+    &-viewcart,
+    &-checkout {
+      width: 100%;
+      height: 46px;
+      justify-content: center;
+      @include display-flex();
+      @media only screen and (max-width: $screen-md-down) {
+        margin-bottom: 10px;
+      }
+      &, i {
+        &::before {
+          position: relative;
+          margin: 0;
+        }
+      }
+    }
+    &-viewcart {
+      i {
+        margin-right: 6px;
+        font-size: 32px;
+      }
+    }
+    &-checkout {
+      i {
+        margin-right: 10px;
+        font-size: 18px;
+        &::before {
+          top: -2px;
+        }
+      }
+    }
+  }
+  &__user,
+  &__settings {
+    display: none;
+    position: absolute;
+    max-width: 100%;
+    top: 100%;
+    overflow-y: auto;
+    -ms-overflow-y: auto;
+    @media only screen and (min-width: $screen-md) {
+      width: 280px;
+      padding: 36px 40px;
+      right: 0;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      width: 100%;
+      left: 0;
+      border-top: 1px solid transparent;
+    }
+  }
+  & .tt-list-toggle {
+    width: 100%;
+    li {
+      display: block;
+      &.tt-list-toggle__next {
+        a {
+          &::after {
+            @media only screen and (min-width: $screen-md) {
+              top: 12px;
+            }
+            @media only screen and (max-width: $screen-md-down) {
+              top: 20px;
+              right: 24px;
+              @include square(7px);
+            }
+          }
+          span {
+            margin-left: 6px;
+          }
+        }
+      }
+      &.tt-list-toggle__open {
+        &::after {
+          @media only screen and (min-width: $screen-md) {
+            top: 14px;
+          }
+          @media only screen and (max-width: $screen-md-down) {
+            top: 22px;
+          }
+        }
+      }
+      a {
+        font-weight: $fw--bold;
+        font-size: $font-size--sm;
+        @media only screen and (min-width: $screen-md) {
+          height: 30px;
+          line-height: 30px;
+        }
+        @media only screen and (max-width: $screen-md-down) {
+          width: 100%;
+          height: 50px;
+          line-height: 50px;
+          padding-left: 22px;
+          padding-right: 22px;
+          border-bottom: 1px solid transparent;
+        }
+      }
+      ul {
+        @media only screen and (min-width: $screen-md) {
+          margin-bottom: 20px;
+        }
+        li {
+          a {
+            @media only screen and (min-width: $screen-md) {
+              padding-left: 12px;
+              font-weight: $fw--regular;
+              font-size: 12px;
+            }
+            @media only screen and (max-width: $screen-md-down) {
+              padding-left: 58px;
+              padding-right: 58px;
+            }
+          }
+        }
+      }
+    }
+  }
+  //end: popups
+  //end: options
+
+  //header builds
+  //01
+  &#{&}--build-01 &__content {
+    @media only screen and (min-width: $screen-md) {
+      min-height: 80px;
+    }
+    & > * {
+      @media all and (-ms-high-contrast:none) and (min-width: $screen-md) {
+        min-height: 80px;
+      }
+    }
+  }
+  &#{&}--build-01 &__menu {
+    @media only screen and (min-width: $screen-md) and (max-width: $screen-lg-down) {
+      padding-left: 20px;
+    }
+    @media only screen and (min-width: $screen-lg) {
+      padding-left: 40px;
+    }
+  }
+
+  //02
+  &#{&}--build-02 {
+    @media only screen and (min-width: $screen-md) {
+      flex-wrap: wrap;
+    }
+    .tonyMenu__item {
+      padding-top: 2px;
+      padding-bottom: 1px;
+    }
+  }
+  &#{&}--build-02 &__content {
+    @media only screen and (min-width: $screen-md) {
+      min-height: 80px;
+    }
+    & > * {
+      @media all and (-ms-high-contrast:none) and (min-width: $screen-md) {
+        min-height: 80px;
+      }
+    }
+  }
+  &#{&}--build-02#{&}--search &__menu > .TonyM {
+    @include display-flex();
+  }
+  &#{&}--build-02 &__menu {
+    @media only screen and (min-width: $screen-md) {
+      width: 100%;
+      min-height: 60px;
+    }
+    @media only screen and (min-width: $screen-md) and (max-width: $screen-lg-down) {
+      padding-left: 49px;
+    }
+    @media only screen and (min-width: $screen-lg) {
+      padding-left: 40px;
+    }
+    & > * {
+      @media all and (-ms-high-contrast:none) and (min-width: $screen-md) {
+        min-height: 60px;
+      }
+    }
+  }
+
+  //03
+  &#{&}--build-03 &__logo {
+    @media only screen and (min-width: $screen-md) {
+      @include _center-block-abs();
+    }
+  }
+  &#{&}--build-03 &__content {
+    @media only screen and (min-width: $screen-md) {
+      min-height: 80px;
+    }
+    & > * {
+      @media all and (-ms-high-contrast:none) and (min-width: $screen-md) {
+        min-height: 80px;
+      }
+    }
+  }
+  &#{&}--build-03#{&}--search &__menu > .TonyM {
+    @media only screen and (min-width: $screen-md) {
+      @include display-flex();
+    }
+  }
+  &#{&}--build-03 &__menu {
+    @media only screen and (min-width: $screen-md) {
+      width: 100%;
+      min-height: 60px;
+      justify-content: center;
+    }
+    @media only screen and (min-width: $screen-md) and (max-width: $screen-lg-down) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @media only screen and (min-width: $screen-lg) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    & > * {
+      @media all and (-ms-high-contrast:none) and (min-width: $screen-md) {
+        min-height: 60px;
+      }
+    }
+  }
+  &#{&}--build-03 &__menu#{&}__sticky {
+    @media only screen and (min-width: $screen-md) {
+      padding-right: 0;
+    }
+  }
+  &#{&}--build-03#{&}--search &__logo {
+    @media only screen and (min-width: $screen-md) {
+      @include display-flex();
+    }
+  }
+
+  //04
+  &#{&}--build-04 &__content {
+    @media only screen and (min-width: $screen-md) {
+      min-height: 100px;
+    }
+    & > * {
+      @media all and (-ms-high-contrast:none) and (min-width: $screen-md) {
+        min-height: 100px;
+      }
+    }
+  }
+  &#{&}--build-04 &__menu {
+    @media only screen and (min-width: $screen-md) and (max-width: $screen-lg-down) {
+      padding-left: 20px;
+    }
+    @media only screen and (min-width: $screen-lg) {
+      padding-left: 40px;
+    }
+  }
+  &#{&}--style-01,
+  &#{&}--style-06 {
+    [data-tm-dir='row'] .TonyM__mm {
+      @media only screen and(min-width: $screen-md) {
+        top: calc(100% + 1px);
+      }
+    }
+  }
+  &#{&}--style-01:not(.tt-header--transparent) &__spacer--d,
+  &#{&}--style-06:not(.tt-header--transparent) &__spacer--d {
+    &::before {
+      @media only screen and (min-width: $screen-md) {
+        content: '';
+        position: absolute;
+        min-width: 250px;
+        width: 250px;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+  &#{&}--transparent[data-sticky-effect='1'] &__spacer {
+    @media only screen and (min-width: $screen-md) {
+      height: 0 !important;
+    }
+  }
+  &#{&}--transparent {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  &#{&}--transparent &__content,
+  &#{&}--transparent &__logo,
+  &#{&}--transparent &__nav {
+    border-bottom: none !important;
+  }
+}

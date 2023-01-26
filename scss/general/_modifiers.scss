@@ -1,0 +1,364 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.ttg {
+  &-hidden {
+    display: none !important;
+  }
+
+  &-f--12 {
+    font-size: 12px !important;
+  }
+  &-f--14 {
+    font-size: 14px !important;
+  }
+  &-f--16 {
+    font-size: 16px !important;
+  }
+  &-f--18 {
+    font-size: 18px !important;
+  }
+  &-f--20 {
+    font-size: 20px !important;
+  }
+  &-f--22 {
+    font-size: 22px !important;
+  }
+  &-f--24 {
+    font-size: 24px !important;
+  }
+  &-f--26 {
+    font-size: 26px !important;
+  }
+  &-f--28 {
+    font-size: 28px !important;
+  }
+  &-f--30 {
+    font-size: 30px !important;
+  }
+
+  &-fw--light {
+    font-weight: $fw--light !important;
+  }
+  &-fw--regular {
+    font-weight: $fw--regular !important;
+  }
+  &-fw--semi-bold {
+    font-weight: $fw--semi-bold !important;
+  }
+  &-fw--bold {
+    font-weight: $fw--bold !important;
+  }
+  &-fw--extra-bold {
+    font-weight: $fw--extra-bold !important;
+  }
+
+  &-text--line-through {
+    text-decoration: line-through !important;
+  }
+  &-text--underline {
+    text-decoration: underline !important;
+  }
+  &-text--italic {
+    font-style: italic !important;
+  }
+  &-text--highlight {
+    display: inline;
+    padding-top: 2px;
+    padding-bottom: 6px;
+  }
+
+  &-quote {
+    position: relative;
+    div {
+      &:first-child {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      &:last-child {
+        padding-left: 80px;
+      }
+    }
+    i {
+      text-align: left;
+      font-size: 60px;
+    }
+    p, a {
+      font-size: 30px;
+      font-weight: $fw--bold;
+      line-height: 1.4;
+      @media only screen and (min-width: $screen-sm) {
+        font-size: 30px;
+      }
+      @media only screen and (max-width: $screen-sm-down) {
+        font-size: $font-size--lg;
+      }
+    }
+  }
+
+  &-capitalize {
+    &:first-letter {
+      float: left;
+      padding: 24px 24px;
+      margin-right: 24px;
+      margin-top: 8px;
+      font-size: 30px;
+      font-weight: $fw--extra-bold;
+      line-height: 0.8;
+    }
+    &--small {
+      &:first-letter {
+        padding-left: 14px;
+        padding-right: 14px;
+        margin-right: 16px;
+        line-height: 42px;
+        font-size: 26px;
+      }
+    }
+  }
+  &__required {
+    &::after {
+      content: ' *';
+    }
+  }
+
+  &-ovf-hidden {
+    @at-root {
+      body#{&} {
+        width: 100% !important;
+        overflow: hidden !important;
+      }
+    }
+  }
+
+  //grid
+  &-grid {
+    &-padding--none {
+      @include _margin-sides--off();
+      & > [class^="col-"] {
+        @include _padding-sides--off();
+      }
+    }
+    &-pdg-btm {
+      &--xs {
+        & > [class^="col-"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            padding-bottom: 24px !important;
+          }
+        }
+      }
+      &--sm {
+        & > [class^="col-"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            padding-bottom: 24px !important;
+          }
+        }
+      }
+      &--md {
+        & > [class^="col-"] {
+          @media only screen and(max-width: $screen-md-down) {
+            padding-bottom: 24px !important;
+          }
+        }
+      }
+    }
+    &-border {
+      & > [class^="col-"]:not(:first-child) {
+        @media only screen and(min-width: $screen-md-down) {
+          border-left: solid 1px transparent;
+        }
+      }
+    }
+  }
+  &-cont {
+    &-padding--none {
+      overflow: hidden;
+      @include _padding-sides--off(!important);
+    }
+  }
+
+  //margin
+  &-mt {
+    &--0 {
+      margin-top: 0px !important;
+    }
+    &--10 {
+      margin-top: 10px !important;
+    }
+    &--20 {
+      margin-top: 20px !important;
+    }
+    &--30 {
+      margin-top: 30px !important;
+    }
+    &--40 {
+      margin-top: 40px !important;
+    }
+    &--50 {
+      margin-top: 50px !important;
+    }
+    &--60 {
+      margin-top: 60px !important;
+    }
+    &--70 {
+      margin-top: 70px !important;
+    }
+    &--80 {
+      margin-top: 80px !important;
+    }
+    &--90 {
+      margin-top: 90px !important;
+    }
+    &--100 {
+      margin-top: 100px !important;
+    }
+    &--110 {
+      margin-top: 110px !important;
+    }
+    &--120 {
+      margin-top: 120px !important;
+    }
+    &--130 {
+      margin-top: 130px !important;
+    }
+    &--140 {
+      margin-top: 140px !important;
+    }
+    &--150 {
+      margin-top: 150px !important;
+    }
+    &--200 {
+      margin-top: 200px !important;
+    }
+    &--300 {
+      margin-top: 300px !important;
+    }
+  }
+  &-mb {
+    &--0 {
+      margin-bottom: 0px !important;
+    }
+    &--10 {
+      margin-bottom: 10px !important;
+    }
+    &--20 {
+      margin-bottom: 20px !important;
+    }
+    &--30 {
+      margin-bottom: 30px !important;
+    }
+    &--40 {
+      margin-bottom: 40px !important;
+    }
+    &--50 {
+      margin-bottom: 50px !important;
+    }
+    &--60 {
+      margin-bottom: 60px !important;
+    }
+    &--70 {
+      margin-bottom: 70px !important;
+    }
+    &--80 {
+      margin-bottom: 80px !important;
+    }
+    &--90 {
+      margin-bottom: 90px !important;
+    }
+    &--100 {
+      margin-bottom: 100px !important;
+    }
+    &--110 {
+      margin-bottom: 110px !important;
+    }
+    &--120 {
+      margin-bottom: 120px !important;
+    }
+    &--130 {
+      margin-bottom: 130px !important;
+    }
+    &--140 {
+      margin-bottom: 140px !important;
+    }
+    &--150 {
+      margin-bottom: 150px !important;
+    }
+    &--200 {
+      margin-bottom: 200px !important;
+    }
+    &--300 {
+      margin-bottom: 300px !important;
+    }
+  }
+  &-m--center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  //list
+  &-list {
+    li {
+      font-weight: $fw--bold;
+    }
+    & > li {
+      &:not(:first-child) {
+        margin-top: 4px;
+      }
+      li {
+        &:first-child {
+          margin-top: 4px;
+        }
+      }
+    }
+    @at-root {
+      ul#{&} {
+        li {
+          &::before {
+            display: inline-block;
+            content: '';
+            margin-right: 12px;
+            border-radius: 50%;
+            @include square(6px);
+          }
+        }
+        ul {
+          padding-left: 36px;
+        }
+      }
+      ol#{&} {
+        counter-reset: list1;
+        li {
+          list-style-type: none;
+          &::before {
+            margin-right: 6px;
+            counter-increment: list1;
+            content: counter(list1) ". ";
+          }
+        }
+        ol {
+          padding-left: 36px;
+          counter-reset: list2;
+          li {
+            &::before {
+              counter-increment: list2;
+              content: counter(list1) "@mixin " counter(list2) ". ";
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+/*DOCUMENTATION*/
+/*
+//grid
+ttg-grid-padding--none
+*/

@@ -1,0 +1,108 @@
+//general
+@import 'general/_mixin.scss';
+@import 'general/_variables.scss';
+@import 'general/_typography.scss';
+@import 'general/_modifiers.scss';
+@import 'general/_animation.scss';
+
+//modification of plugins
+@import 'blocks/_magnific-popup.scss';
+@import 'blocks/_lazy-load.scss';
+
+//components
+@import 'blocks/_input.scss';
+@import 'blocks/_button.scss';
+@import 'blocks/_label.scss';
+@import 'blocks/_product-btn-vw.scss';
+@import 'blocks/_logo.scss';
+@import 'blocks/_list-dropdown.scss';
+@import 'blocks/_counter.scss';
+@import 'blocks/_social-icons.scss';
+@import 'blocks/_range-slider.scss';
+@import 'blocks/_video.scss';
+@import 'blocks/_list.scss';
+@import 'blocks/_payment-options.scss';
+
+//blocks
+@import "blocks/_price.scss";
+@import 'blocks/_layout.scss';
+@import 'blocks/_page.scss';
+@import 'blocks/_preloader.scss';
+@import 'blocks/_promobox.scss';
+@import 'blocks/_shipping-info.scss';
+@import 'blocks/_product.scss';
+@import 'blocks/_stars.scss';
+@import 'blocks/_newsletter.scss';
+@import 'blocks/_slider-revolution.scss';
+@import 'blocks/_slider-scroll.scss';
+@import 'blocks/_product-head.scss';
+@import 'blocks/_quick-view.scss';
+@import 'blocks/_add-to-cart.scss';
+@import 'blocks/_newsletter-popup.scss';
+@import 'blocks/_tabs.scss';
+@import 'blocks/_review.scss';
+@import 'blocks/_carousel-box.scss';
+@import 'blocks/_breadcrumbs.scss';
+@import 'blocks/_subcategory.scss';
+@import 'blocks/_categories.scss';
+@import 'blocks/_layer-navigation.scss';
+@import 'blocks/_sidebar.scss';
+@import 'blocks/_sticky-sidebar.scss';
+@import 'blocks/_view-options.scss';
+@import 'blocks/_pagination.scss';
+@import 'blocks/_gallery.scss';
+@import 'blocks/_post.scss';
+@import 'blocks/_comments.scss';
+@import 'blocks/_form.scss';
+@import 'blocks/_carousel-brands.scss';
+@import 'blocks/_contacts.scss';
+@import 'blocks/_team.scss';
+@import 'blocks/_about.scss';
+@import 'blocks/_wishlist.scss';
+@import 'blocks/_compare.scss';
+@import 'blocks/_checkout.scss';
+@import 'blocks/_sitemap.scss';
+@import 'blocks/_faq.scss';
+@import 'blocks/_coming-soon.scss';
+@import 'blocks/_summary.scss';
+@import 'blocks/_cart.scss';
+@import 'blocks/_tabs-product.scss';
+@import 'blocks/_tabs-my-account.scss';
+@import 'blocks/_my-account.scss';
+@import 'blocks/_login.scss';
+@import 'blocks/_elements.scss';
+@import 'blocks/_instagram.scss';
+@import 'blocks/_product-gallery.scss';
+@import "blocks/_testimonials.scss";
+@import "blocks/_gift-card.scss";
+@import "blocks/_progress-bar.scss";
+
+@import 'blocks/_header.scss';
+@import 'blocks/_footer.scss';
+
+//pages
+@import 'pages/_product-page.scss';
+@import 'pages/_listing-page.scss';
+@import 'pages/_home-page.scss';
+@import 'pages/_empty.scss';
+
+//rtl
+@import 'general/_rtl.scss';
+
+//shopify
+@import "blocks/_prdbut.scss";
+
+//other
+@import "blocks/_other.scss";
+
+//font
+@import 'font/_variables.scss';
+@import 'font/_body.scss';
+
+//animation
+@import 'animation/_variables.scss';
+@import 'animation/_body.scss';
+
+//colors
+@import 'colorize/_variables.scss';
+@import 'colorize/_body.scss';

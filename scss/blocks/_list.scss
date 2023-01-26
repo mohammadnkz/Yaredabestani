@@ -1,0 +1,32 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-list {
+  &__title {
+    font-weight: $fw--bold;
+    @media only screen and (min-width: $screen-sm) {
+      font-size: 22px;
+    }
+    @media only screen and (max-width: $screen-sm-down) {
+      font-size: $font-size--lg;
+    }
+  }
+  ul {
+    margin-top: 14px;
+    li {
+      list-style: none;
+      font-weight: $fw--bold;
+      line-height: 2;
+      align-items: center;
+      @include display-flex();
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 12px;
+        border-radius: 50%;
+        @include square(6px);
+      }
+    }
+  }
+}

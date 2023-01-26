@@ -1,0 +1,37 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-logo {
+  display: inline-block;
+  max-width: 100%;
+  h1 {
+    font-size: $font-size--lg;
+  }
+  img {
+    max-width: 100%;
+    width: 132px;
+    height: auto;
+  }
+  &__curtain {
+    @media only screen and (min-width: $screen-md) {
+      position: relative;
+    }
+    &::before {
+      @media only screen and (min-width: $screen-md) {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &__curtain#{&}__curtain-hide {
+    &::before {
+      @media only screen and (min-width: $screen-md) {
+        height: 0;
+      }
+    }
+  }
+}

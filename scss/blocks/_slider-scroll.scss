@@ -1,0 +1,125 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-slider-scroll {
+  position: relative;
+  @include opacity(0);
+  &__nav {
+    position: fixed;
+    right: 5%;
+    top: 200px;
+    z-index: 7;
+    flex-direction: column;
+    align-items: center;
+    @include display-flex();
+    ul {
+      @media only screen and(max-width: $screen-md-down) {
+        display: none;
+      }
+      li {
+        a {
+          display: inline-block;
+          position: relative;
+          margin-bottom: 15px;
+          backface-visibility: hidden;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          border-radius: 50%;
+          @include square(8px);
+        }
+        &.active {
+          a {
+            &::before {
+              -webkit-transform: scale(1);
+              -moz-transform: scale(1);
+              -ms-transform: scale(1);
+              -o-transform: scale(1);
+              transform: scale(1);
+            }
+          }
+        }
+      }
+    }
+    &_arrows {
+      @media only screen and(max-width: $screen-md-down) {
+        display: none;
+      }
+      span {
+        height: 30px;
+        cursor: pointer;
+        flex-direction: column;
+        @include display-flex();
+        &:first-child {
+          margin-bottom: 12px;
+          @include rotate(90deg);
+        }
+        &:last-child {
+          margin-top: 12px;
+          @include rotate(90deg);
+        }
+        i {
+          font-size: 42px;
+        }
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    overflow: hidden;
+    img {
+      position: absolute;
+      display: block;
+      width: auto;
+      min-width: 100%;
+      min-height: 100%;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+    }
+  }
+  &__text {
+    position: absolute;
+    top: 50%;
+    @include translateY(-50%);
+    @media only screen and (min-width: $screen-xs) {
+      left: 60px;
+    }
+    @media only screen and (max-width: $screen-xs-down) {
+      left: 24px;
+    }
+    div,
+    span,
+    p {
+      display: block;
+      font-weight: $fw--bold;
+      white-space: nowrap;
+    }
+    div,
+    span {
+      font-size: $fs--h1;
+      line-height: $lh--h2;
+      @media only screen and (max-width: $screen-sm-down) {
+        font-size: 32px;
+      }
+      @media only screen and (max-width: $screen-xs-down) {
+        font-size: $font-size--lg;
+      }
+    }
+    span {
+      margin-bottom: 20px;
+      @media only screen and (max-width: $screen-sm-down) {
+        margin-bottom: 26px;
+      }
+    }
+    p {
+      margin-bottom: 52px;
+      font-size: $font-size;
+      line-height: $line-height - 0.5;
+      @media only screen and (max-width: $screen-sm-down) {
+        display: none;
+      }
+    }
+  }
+}

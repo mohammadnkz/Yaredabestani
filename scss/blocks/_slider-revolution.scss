@@ -1,0 +1,88 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-sr {
+  visibility: hidden;
+  .tp-caption.text-center {
+    text-align: center !important;
+  }
+  .tp-caption.text-right {
+    text-align: right !important;
+  }
+  &__text {
+    div,
+    span,
+    p {
+      display: block;
+      font-weight: $fw--bold;
+    }
+    div,
+    span {
+      font-size: $fs--h1;
+      line-height: $lh--h2;
+      @media only screen and (max-width: $screen-sm-down) {
+        font-size: $fs--h1 - 30;
+      }
+    }
+    span {
+      margin-bottom: 20px;
+      @media only screen and (max-width: $screen-sm-down) {
+        margin-bottom: 26px;
+      }
+    }
+    p {
+      margin-bottom: 52px;
+      font-size: $font-size;
+      line-height: $line-height - 0.5;
+      @media only screen and (max-width: $screen-sm-down) {
+        display: none;
+      }
+    }
+  }
+  .tparrows.uranus {
+    &::before {
+      font-size: 30px;
+      font-weight: $fw--bold;
+    }
+  }
+  .tp-bullets.ares {
+    .tp-bullet {
+      @include square(8px);
+    }
+  }
+  &#{&}__nav--off {
+    .tp-bullets,
+    .tparrows {
+      display: none !important;
+    }
+  }
+  &#{&}__bullets--off {
+    .tp-bullets {
+      display: none !important;
+    }
+  }
+  &#{&}__arrows--off {
+    .tparrows {
+      display: none !important;
+    }
+  }
+  &#{&}__nav-vertical {
+    .tparrows {
+      @include rotate(90deg);
+    }
+  }
+  .tp-video-play-button {
+    z-index: 10;
+    @include opacity(1);
+  }
+  &--video {
+    * {
+      height: 100% !important;
+    }
+  }
+}
+
+.forcefullwidth_wrapper_tp_banner {
+  overflow: hidden;
+}

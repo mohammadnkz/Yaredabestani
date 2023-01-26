@@ -1,0 +1,107 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+$sidebar-width-lg: 420px;
+$sidebar-width-md: 320px;
+.tt-layout {
+  @include display-flex();
+  &__sidebar {
+    display: none;
+    z-index: 1;
+    @media only screen and (min-width: $screen-lg) {
+      min-width: $sidebar-width-lg;
+      width: $sidebar-width-lg;
+    }
+    @media only screen and (min-width: $screen-md) and (max-width: $screen-lg-down) {
+      min-width: $sidebar-width-md;
+      width: $sidebar-width-md;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      z-index: 10000;
+    }
+  }
+  &__content {
+    width: 100%;
+    min-height: 400px;
+    margin: 0 auto;
+  }
+  &__sidebar-left &__sidebar,
+  &__sidebar-right &__sidebar {
+    display: block;
+  }
+  &__sidebar-left &__content,
+  &__sidebar-right &__content {
+    @media only screen and (min-width: $screen-lg) {
+      width: calc(100% - #{$sidebar-width-lg});
+    }
+    @media only screen and (min-width: $screen-md) and (max-width: $screen-lg-down) {
+      width: calc(100% - #{$sidebar-width-md});
+    }
+    & > .container {
+      width: 100%;
+      @media only screen and (min-width: $screen-lg) {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+    }
+  }
+  &__sidebar-right &__sidebar {
+    order: 1;
+  }
+  &__fullwidth &__content {
+    & > .container {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  &__fullwidth &__content {
+    & > .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &__fullwidth &__section--pdg {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  &__fullwidth &__section--pdg-mob {
+    @media only screen and (max-width: $screen-md-down) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+  &__fullwidth &__section--pdg-desk {
+    @media only screen and (min-width: $screen-md) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+  &:not(.tt-layout__fullwidth) &__section--full-mob {
+    @media only screen and (max-width: $screen-md-down) {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+  }
+  &__section--full-mob-all {
+    @media only screen and (max-width: $screen-md-down) {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+  }
+  &:not(.tt-layout__fullwidth):not(.tt-layout__sidebar-left):not(.tt-layout__sidebar-right) &__section--full {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .tt-layout__sidebar-left &__section--full,
+  .tt-layout__sidebar-right &__section--full {
+    @media only screen and (min-width: $screen-lg) {
+      margin-left: -60px;
+      margin-right: -60px;
+    }
+    @media only screen and (max-width: $screen-lg-down) {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+  }
+}

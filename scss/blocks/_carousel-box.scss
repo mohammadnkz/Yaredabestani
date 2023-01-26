@@ -1,0 +1,30 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-carousel-box {
+  overflow: hidden;
+  &__slider {
+    @media only screen and (min-width: $screen-sm) {
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    &:not(.slick-initialized) {
+      visibility: hidden;
+    }
+  }
+  [class^='col-'] {
+    @media only screen and (max-width: $screen-sm-down) {
+      padding: 0;
+    }
+    &,
+    a {
+      outline: none;
+    }
+  }
+  .slick-track {
+    & > div {
+      outline: none;
+    }
+  }
+}

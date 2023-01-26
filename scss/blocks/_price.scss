@@ -1,0 +1,27 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-price {
+  font-size: 1em;
+  font-weight: $fw--extra-bold;
+  line-height: 1.1em;
+  min-height: 1em;
+  flex-wrap: wrap;
+  @include display-inline-flex();
+  &#{&}--sale {
+    & > span {
+      align-items: flex-end;
+      @include display-flex();
+      &:not(:first-child) {
+        font-size: 0.75em;
+        line-height: 1.3em;
+        font-weight: $fw--bold;
+        text-decoration: line-through;
+      }
+      &:first-child {
+        margin-right: 0.4em;
+      }
+    }
+  }
+}

@@ -1,0 +1,485 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+$c-animation-hover: 0.5s;
+.tt-product {
+  position: relative;
+  overflow: hidden;
+  @media only screen and (min-width: $screen-md) {
+    min-height: 100px;
+  }
+  img {
+    width: 100%;
+  }
+  a {
+    outline: none;
+  }
+  &__image {
+    position: relative;
+    a {
+      position: relative;
+      display: block;
+      &.ttg-loading {
+        &::before {
+          z-index: 1;
+        }
+        &::after {
+          z-index: auto;
+        }
+      }
+    }
+    &#{&}--square {
+      &::after {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
+      a {
+        @include _flex-center();
+        @include display-flex();
+        @include _stretch-block();
+        img {
+          width: auto;
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+  &__hover {
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    z-index: 1;
+    @include display-flex();
+  }
+  &__view-overlay &__hover {
+    @media only screen and (min-width: $screen-md) {
+      will-change: transform;
+      @include _stretch-block();
+      @include opacity(0);
+    }
+    &::before {
+      @media only screen and (min-width: $screen-md) {
+        @include _pseudo-block();
+        @include _stretch-block();
+        @include opacity(0.95);
+      }
+    }
+  }
+  &__view-overlay:hover &__hover {
+    @media only screen and (min-width: $screen-md) {
+      z-index: 2;
+      @include opacity(1);
+    }
+  }
+  &#{&}__hover-down &__hover {
+    @media only screen and (min-width: $screen-md) {
+      @include translateY(-100%);
+    }
+  }
+  &__hover#{&}__hover-transparent {
+    &::before {
+      @media only screen and (min-width: $screen-md) {
+        @include opacity(0);
+      }
+    }
+  }
+  &__hover#{&}__view-overlay#{&}__hover-transparent &__content .ttg-text-animation--emersion > *:not(.tt-product__option),
+  &__hover#{&}__hover-down#{&}__hover-transparent &__content .ttg-text-animation--emersion > *:not(.tt-product__option) {
+    @media only screen and (min-width: $screen-md) {
+      @include opacity(0);
+    }
+  }
+  &__hover#{&}__hover-transparent &__option {
+    @media only screen and (min-width: $screen-md) {
+      @include opacity(0.6);
+    }
+  }
+  &__hover-down:hover &__hover{
+    @media only screen and (min-width: $screen-md) {
+      @include translateY(0%);
+    }
+  }
+  &__content {
+    position: relative;
+    width: 100%;
+    max-height: 100%;
+    text-align: center;
+    p {
+      padding-left: 13.2%;
+      padding-right: 13.2%;
+      margin: 10px 0;
+      line-height: 1.6;
+      @media only screen and (max-width: $screen-md-down) {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+      a {
+        display: inline-block;
+        font-weight: $fw--bold;
+        font-size: $font-size--sm;
+        line-height: calc(1.6 * #{$font-size--sm});
+        &:not(:first-child) {
+          margin-left: 8px;
+        }
+      }
+    }
+    h3 {
+      margin: 0;
+      @media only screen and (max-width: $screen-md-down) {
+        padding: 0 14px;
+      }
+      @media only screen and (min-width: $screen-md) {
+        padding: 0 13.2%;
+      }
+      @include _style-h6();
+    }
+    .ps__scrollbar-x-rail {
+      display: none !important;
+    }
+  }
+  &__view-sheet &__content {
+    margin: 20px 0;
+  }
+  &__view-overlay &__content {
+    @media only screen and (max-width: $screen-md-down) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  &-view:not(.tt-product-view--list) &__description {
+    display: none;
+  }
+  &__option {
+    margin: 5px 0;
+  }
+  &__price {
+    font-size: 24px;
+  }
+  &__stars {
+    margin: 10px 0 14px;
+  }
+  &__buttons {
+    margin-top: 14px;
+    @include display-inline-flex(!important);
+    @include _flex-center();
+    .tt-btn {
+      margin: 0 5px;
+      margin-bottom: 20px;
+      @media only screen and (max-width: $screen-md-down) {
+        border-color: transparent !important;
+      }
+    }
+    &_cart {
+      &:hover {
+        @media only screen and (min-width: $screen-md) {
+          background-color: transparent;
+        }
+      }
+      i::before {
+        font-size: 32px;
+      }
+      &.tt-btn__state--active {
+        i::before {
+          content: '\e8b3';
+          font-size: 20px;
+        }
+      }
+      & > span {
+        display: none;
+      }
+    }
+    &_like {
+      i::before {
+        margin-top: 2px;
+      }
+    }
+    &_qv {
+      @media only screen and (max-width: $screen-md-down) {
+        display: none;
+      }
+    }
+  }
+  &__countdown {
+    .countdown-row {
+      font-weight: $fw--bold;
+      display: inline-block;
+      @media only screen and (min-width: $screen-xs) {
+        font-size: $font-size--sm;
+      }
+      @media only screen and (max-width: $screen-xs-down) {
+        font-size: 12px;
+      }
+      .countdown-section {
+        display: block;
+        float: left;
+        white-space: nowrap;
+        @media only screen and (min-width: $screen-xs) {
+          width: 64px;
+        }
+        @media only screen and (max-width: $screen-xs-down) {
+          width: 54px;
+        }
+        &:first-child {
+          text-align: right;
+          padding-right: 2px;
+        }
+        &:not(:first-child) {
+          &::before {
+            float: left;
+            display: block;
+            content: ':';
+            text-align: center;
+            width: 14px;
+          }
+        }
+        span {
+          display: inline-block;
+        }
+        .countdown-period {
+          margin-left: 4px;
+        }
+      }
+      .countdown-section--small {
+        width: 32px;
+      }
+    }
+  }
+  &__labels {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    font-size: 0;
+    z-index: 2;
+    pointer-events: none;
+    span {
+      margin-bottom: 4px;
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+  }
+  &#{&}__view-overlay:hover &__labels {
+    @media only screen and (min-width: $screen-md) {
+      @include opacity(0);
+    }
+  }
+  &#{&}__hover-down:hover &__labels {
+    @media only screen and (min-width: $screen-md) {
+      top: 0;
+      @include translateY(-100%);
+    }
+  }
+  &.ttg-text-animation-parent .ttg-text-animation--emersion {
+    & > * {
+      @media only screen and (max-width: $screen-md-down) {
+        @include translateY(0px, !important);
+      }
+    }
+  }
+
+  //list view
+  &-view {
+    position: relative;
+    &.ttg-loading {
+      &::before {
+        top: 220px;
+      }
+    }
+  }
+  &-view--list & {
+    padding-bottom: 24px;
+    @include display-flex();
+  }
+  &-view--list &__description{
+    @media only screen and (min-width: $screen-md) {
+      display: block;
+      font-weight: $fw--regular;
+      font-size: 16px;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+    }
+  }
+  &-view--list &__image {
+    @media only screen and (min-width: $screen-md) {
+      width: 39%;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      width: 40%;
+    }
+  }
+  &-view--list &__hover {
+    display: block;
+    position: relative;
+    will-change: auto;
+    @include translateY(0px, !important);
+    @include opacity(1);
+    @media only screen and (min-width: $screen-md) {
+      width: 61%;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      width: 60%;
+    }
+    &::before {
+      display: none;
+    }
+  }
+  &-view--list &__hover#{&}__hover-transparent h3,
+  &-view--list &__hover#{&}__hover-transparent p,
+  &-view--list &__hover#{&}__hover-transparent &__price,
+  &-view--list &__hover#{&}__hover-transparent &__stars,
+  &-view--list &__hover#{&}__hover-transparent &__buttons,
+  &-view--list &__hover#{&}__hover-transparent &__countdown,
+  &-view--list &__hover#{&}__hover-transparent &__option {
+    @media only screen and (min-width: $screen-md) {
+      @include opacity(1);
+    }
+  }
+  &-view--list &__content {
+    text-align: left;
+    margin: 0;
+    @media only screen and (min-width: $screen-md) {
+      padding: 0 40px;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      padding: 0 0 0 20px;
+    }
+    h3 {
+      padding: 0;
+      margin-top: 0;
+    }
+    p {
+      padding: 0;
+      & > span {
+        & > a {
+          @media only screen and (max-width: $screen-md-down) {
+            font-size: $font-size--lg;
+          }
+        }
+      }
+    }
+  }
+  &-view--list &__option {
+    text-align: left;
+  }
+  &-view--list &__buttons {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .tt-btn {
+      @media only screen and (max-width: $screen-xs-down) {
+        @include square(34px);
+      }
+    }
+    &_cart {
+      @media only screen and (min-width: $screen-md) {
+        width: 170px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-right: 14px;
+        border-radius: 0;
+      }
+      i {
+        @media only screen and (min-width: $screen-md) {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+      & > span {
+        @media only screen and (min-width: $screen-md) {
+          display: inline;
+          font-size: $font-size--sm;
+          font-weight: $fw--bold;
+        }
+      }
+      &.tt-btn__state--active,
+      &.tt-btn__state--wait {
+        & > span {
+          @media only screen and (min-width: $screen-md) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  &-view--list &__countdown {
+    @media only screen and (min-width: $screen-md) {
+      text-align: left;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+    }
+    .countdown-row {
+      text-align: center;
+      .countdown-section {
+        &:first-child {
+          text-align: center;
+        }
+      }
+    }
+  }
+  &-view--list &__labels {
+    @media only screen and (min-width: $screen-md) {
+      top: 20px !important;
+      @include opacity(1, !important);
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+    }
+  }
+  &-view--list &.ttg-text-animation-parent .ttg-text-animation--emersion {
+    overflow: visible;
+    & > * {
+      @include translateY(0px, !important);
+    }
+  }
+  &-view--list &__stars {
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+    }
+  }
+  &-view--list [class^='col-'] {
+    max-width: 100%;
+    @include flex(0 0 100%);
+  }
+  &-view--preview &__image,
+  &-view--preview &__hover {
+    width: 50%;
+  }
+  &-view--preview &__content {
+    padding-left: 24px;
+    padding-right: 0;
+  }
+  &-view--list .prdbut__option {
+    justify-content: flex-start;
+    text-align: left !important;
+  }
+  &-view--offset {
+    @media only screen and (min-width: $screen-md) {
+      margin-bottom: -24px;
+    }
+  }
+  &-view--offset &__view-overlay {
+    @media only screen and (min-width: $screen-md) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+
+/* DOCUMENTATION */
+/*
+//modifiers
+from .product
+=== animation hover ===
+- .tt-product__hover-down
+- .ttg-text-animation-parent
+
+from .product__hover
+=== color click transparent===
+- .tt-product__clr-clk-transp
+*/
+

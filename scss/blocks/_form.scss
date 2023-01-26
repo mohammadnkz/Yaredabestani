@@ -1,0 +1,75 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-form {
+  &__title {
+    margin-bottom: 44px;
+    font-size: 22px;
+    font-weight: $fw--bold;
+    &#{&}--lg {
+      font-size: 30px;
+    }
+  }
+  & > p {
+    margin-bottom: 28px;
+  }
+  &__message {
+    margin-bottom: 20px;
+  }
+  &__form {
+    & > label {
+      display: block;
+      margin: 0;
+    }
+    & > label,
+    .row {
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+    }
+    .row label,
+    & > label span {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: $font-size--sm;
+      font-weight: $fw--bold;
+    }
+    input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+    textarea {
+      width: 100%;
+      padding-left: 20px;
+      padding-right: 20px;
+      outline: none;
+      font-size: $font-size--sm;
+    }
+    input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]) {
+      height: 44px;
+    }
+    textarea {
+      height: 154px;
+      padding-top: 8px;
+      resize: none;
+    }
+  }
+  &__back {
+    flex-wrap: wrap;
+    align-items: center;
+    @include display-inline-flex();
+    span {
+      margin: 0 8px;
+    }
+    a {
+      font-weight: $fw--bold;
+    }
+  }
+  &__section {
+    width: 100%;
+    align-items: center;
+    @include display-inline-flex();
+    input {
+      margin-right: 10px;
+    }
+  }
+}

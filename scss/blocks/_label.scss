@@ -1,0 +1,30 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-label {
+  &__new,
+  &__hot,
+  &__sale,
+  &__out-stock,
+  &__in-stock,
+  &__discount {
+    font-size: $font-size--sm;
+    font-weight: $fw--semi-bold;
+  }
+  &__new,
+  &__hot,
+  &__sale,
+  &__out-stock,
+  &__in-stock {
+    display: inline-block;
+    padding: 2px 8px;
+  }
+  &__discount {
+    border-radius: 50%;
+    @include display-inline-flex();
+    @include _flex-center();
+    float: right;
+    @include square(58px);
+  }
+}

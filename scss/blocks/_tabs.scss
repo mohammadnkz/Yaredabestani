@@ -1,0 +1,280 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-tabs {
+  overflow: hidden;
+  &[data-tt-type="horizontal"] &__head {
+    @media only screen and (min-width: $screen-md) {
+      position: relative;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+    }
+  }
+  &[data-tt-type="horizontal"] &__slider {
+    @media only screen and (min-width: $screen-md) {
+      position: relative;
+      margin: 0 -16px;
+      flex-wrap: wrap;
+      @include display-flex();
+    }
+  }
+  &[data-tt-type="horizontal"] &__btn {
+    @media only screen and (min-width: $screen-md) {
+      padding: 0 16px;
+      outline: none;
+    }
+    & > span {
+      @media only screen and (min-width: $screen-md) {
+        position: relative;
+        display: block;
+        padding: 18px 0;
+        font-size: $font-size--sm;
+        font-weight: $fw--bold;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      &::after {
+        @media only screen and (min-width: $screen-md) {
+          position: absolute;
+          display: none;
+          content: '';
+          width: 100%;
+          bottom: 0;
+          border-bottom: solid 4px transparent;
+          @include opacity(0.3);
+        }
+      }
+      &:hover::after {
+        @media only screen and (min-width: $screen-md) {
+          display: block;
+        }
+      }
+    }
+  }
+  &[data-tt-type="vertical"] {
+    @include display-flex();
+  }
+  &[data-tt-type="vertical"] &__head {
+    @media only screen and (min-width: $screen-md) {
+      position: relative;
+      width: 270px;
+      min-width: 270px;
+      border-right: solid 1px transparent;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+    }
+  }
+  &[data-tt-type="vertical"] &__slider {
+    @media only screen and (min-width: $screen-md) {
+      margin: 0 -16px;
+      flex-direction: column;
+      flex-wrap: wrap;
+      @include display-flex();
+    }
+  }
+  &[data-tt-type="vertical"] &__btn {
+    @media only screen and (min-width: $screen-md) {
+      padding: 0 16px;
+    }
+    & > span {
+      @media only screen and (min-width: $screen-md) {
+        position: relative;
+        display: block;
+        padding: 8px 0;
+        font-size: $font-size--sm;
+        font-weight: $fw--bold;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      &::after {
+        @media only screen and (min-width: $screen-md) {
+          position: absolute;
+          display: none;
+          content: '';
+          height: 100%;
+          top: 0;
+          right: 0;
+          border-right: solid 4px transparent;
+          @include opacity(0.3);
+        }
+      }
+      &:hover::after {
+        @media only screen and (min-width: $screen-md) {
+          display: block;
+        }
+      }
+    }
+  }
+  &__head#{&}__head--slider {
+    @media only screen and (min-width: $screen-md) {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }
+  &__btn {
+    & > span {
+      letter-spacing: 1px;
+    }
+    &-prev,
+    &-next {
+      display: none;
+    }
+  }
+  &__head#{&}__head--slider &__btn {
+    &-prev,
+    &-next {
+      @media only screen and (min-width: $screen-md) {
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 100%;
+        top: 0;
+        cursor: pointer;
+        z-index: 2;
+        @include opacity(0.5);
+      }
+      &::before {
+        @media only screen and (min-width: $screen-md) {
+          position: absolute;
+          display: block;
+          content: '';
+          top: 50%;
+          left: 50%;
+          margin-top: -6px;
+          border-top: solid 3px transparent;
+          border-left: solid 3px transparent;
+          @include square(12px);
+        }
+      }
+      &:not(.disabled):hover {
+        @include opacity(1);
+      }
+    }
+    &-prev {
+      left: -30px;
+      &::before {
+        margin-left: -4px;
+        @include rotate(-45deg);
+      }
+    }
+    &-next {
+      right: -30px;
+      &::before {
+        margin-left: -8px;
+        @include rotate(135deg);
+      }
+    }
+  }
+  &__head#{&}__head--slider {
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      height: 100%;
+      width: 30px;
+      top: 0;
+      cursor: default;
+      z-index: 1;
+    }
+    &::before {
+      left: -30px;
+    }
+    &::after {
+      right: -30px;
+    }
+  }
+  &[data-tt-type="horizontal"] &__border {
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+    }
+    @media only screen and (min-width: $screen-md) {
+      position: absolute;
+      width: 100px;
+      left: 0;
+      bottom: 0;
+      border-bottom: solid 4px transparent;
+    }
+  }
+  &[data-tt-type="vertical"] &__border {
+    @media only screen and (max-width: $screen-md-down) {
+      display: none;
+    }
+    @media only screen and (min-width: $screen-md) {
+      position: absolute;
+      height: 100px;
+      right: 0;
+      top: 0;
+      border-right: solid 4px transparent;
+    }
+  }
+  &__body {
+    @media only screen and (min-width: $screen-md) {
+      //height: 400px;
+      overflow-x: auto;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      border-top: solid 1px transparent;
+      border-bottom: solid 1px transparent;
+    }
+    & > div {
+      display: block;
+      &:not(:first-child) {
+        & > span {
+          border-top: solid 1px transparent;
+        }
+      }
+      & > span {
+        @media only screen and (min-width: $screen-md) {
+          display: none;
+        }
+        @media only screen and (max-width: $screen-md-down) {
+          position: relative;
+          display: block;
+          padding: 15px 24px;
+          font-size: $font-size--sm;
+          font-weight: $fw--bold;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+        i {
+          position: absolute;
+          right: 24px;
+          top: 30px;
+          margin-top: -7px;
+          font-size: 8px;
+        }
+      }
+      &.active > span {
+        i {
+          @include rotate(180deg);
+        }
+      }
+      & > div {
+        display: none;
+      }
+    }
+  }
+  &[data-tt-type="vertical"] &__body {
+    width: 100%;
+  }
+  &__content {
+    @media only screen and (max-width: $screen-md-down) {
+      padding: 30px 24px;
+      border-top: solid 1px transparent;
+    }
+    &-head {
+      @media only screen and (min-width: $screen-md) {
+        font-weight: $fw--bold;
+        font-size: 30px;
+      }
+      @media only screen and (max-width: $screen-md-down) {
+        display: none;
+      }
+    }
+  }
+}

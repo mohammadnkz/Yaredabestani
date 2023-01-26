@@ -1,0 +1,91 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-list-toggle {
+  & > li {
+    a {
+      align-items: center;
+      @include display-flex();
+    }
+    & > *:not(a) {
+      display: none;
+    }
+  }
+  &__next {
+    & > a {
+      position: relative;
+      &::after {
+        display: block;
+        content: '';
+        margin-left: auto;
+        margin-right: 4px;
+        border-right: solid 2px transparent;
+        border-bottom: solid 2px transparent;
+        cursor: pointer;
+        pointer-events: none;
+        @include square(6px);
+        @include rotate(45deg);
+      }
+    }
+  }
+  &__next#{&}__open {
+    & > a::after {
+      top: 14px;
+      //@include rotate(-135deg);
+      @include transform(rotate3d(10, -4, 0, 180deg));
+    }
+  }
+  &#{&}__accordion {
+    li {
+      @media only screen and (max-width: $screen-sm-down) {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+      &:not(:first-child) {
+        border-top: solid 1px transparent;
+        @media only screen and (min-width: $screen-sm) {
+          padding-top: 50px;
+          margin-top: 50px;
+        }
+        @media only screen and (max-width: $screen-sm-down) {
+          padding-top: 24px;
+          margin-top: 24px;
+        }
+      }
+      & > a {
+        @include _style-h5();
+        &::after {
+          border-width: 3px;
+          @include square(12px);
+        }
+      }
+      div {
+        padding-top: 20px;
+      }
+      p {
+        margin: 0;
+        &:not(:first-child) {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+  &#{&}--toogles {
+    li {
+      & > a {
+        &::after {
+          margin-right: 16px;
+          margin-left: 0;
+          order: -1;
+          @include rotate(-45deg);
+        }
+      }
+    }
+  }
+  &#{&}--toogles &__next#{&}__open {
+    & > a::after {
+      @include transform(rotate(45deg) translateY(-4px));
+    }
+  }
+}

@@ -1,0 +1,27 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-pagination {
+  margin: 40px 0;
+  align-items: center;
+  @include display-flex();
+  &__numbs {
+    align-items: center;
+    @include display-flex();
+  }
+  &__prev {
+    margin-right: 14px;
+  }
+  &__next {
+    margin-left: 14px;
+  }
+  span {
+    display: inline-block;
+    padding: 10px 14px;
+    font-size: $font-size--sm;
+    a {
+      font-weight: $fw--bold;
+    }
+  }
+}

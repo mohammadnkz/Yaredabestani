@@ -1,0 +1,175 @@
+.tt-checkout {
+  margin-top: 70px;
+  margin-bottom: 90px;
+  & > .row > [class^='col-'] {
+    @media only screen and (max-width: $screen-md-down) {
+      padding: 0;
+    }
+  }
+  h4 {
+    @media only screen and (max-width: $screen-xs-down) {
+      font-size: 22px;
+    }
+  }
+  &--border {
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: solid 1px transparent;
+  }
+  &__steps {
+    height: 120px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-top: solid 3px transparent;
+    justify-content: space-around;
+    align-items: center;
+    @include display-flex();
+    & > div {
+      position: relative;
+      top: -60px;
+      border-radius: 50%;
+      @include _flex-center();
+      @include display-flex();
+      @media only screen and (min-width: $screen-sm) {
+        @include square(100px);
+      }
+      @media only screen and (max-width: $screen-sm-down) {
+        @include square(60px);
+      }
+      span {
+        font-weight: $fw--bold;
+        @media only screen and (min-width: $screen-sm) {
+          font-size: 30px;
+        }
+        @media only screen and (max-width: $screen-sm-down) {
+          font-size: 22px;
+        }
+      }
+      p {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 50%;
+        font-weight: $fw--bold;
+        white-space: nowrap;
+        @include translateX(-50%);
+        @media only screen and (min-width: $screen-sm) {
+          font-size: 32px;
+        }
+        @media only screen and (min-width: $screen-xs) and (max-width: $screen-sm-down) {
+          font-size: 20px;
+        }
+        @media only screen and (max-width: $screen-xs-down) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  &__step {
+    &-03 {
+      i {
+        @media only screen and (min-width: $screen-sm) {
+          font-size: 28px;
+        }
+        @media only screen and (max-width: $screen-sm-down) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  &__form {
+    [class^='col-'] {
+      & > p {
+        font-size: $font-size--sm;
+        font-weight: $fw--bold;
+        margin-top: 10px;
+      }
+    }
+    .tt-input,
+    select {
+      margin-bottom: 20px;
+    }
+    textarea {
+      min-height: 330px;
+    }
+  }
+  &__methods {
+    ul {
+      li {
+        font-size: $font-size--sm;
+        line-height: 2;
+        @include display-flex();
+        p {
+          min-width: 130px;
+        }
+        p ,span {
+          font-weight: $fw--bold;
+        }
+      }
+    }
+  }
+  &__payment {
+    ul {
+      li {
+        font-size: $font-size--sm;
+        font-weight: $fw--bold;
+        align-items: center;
+        @include display-flex();
+        &:not(:first-child) {
+          margin-top: 14px;
+        }
+        label {
+          margin-top: 4px;
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+  &__coupon {
+    p {
+      font-weight: $fw--bold;
+      font-size: $font-size--sm;
+      @media only screen and (min-width: $screen-sm) {
+        min-width: 100px;
+        margin-right: 64px;
+      }
+    }
+    input {
+      margin-right: 10px;
+    }
+    form,
+    label {
+      @include display-flex();
+    }
+    label {
+      width: 100%;
+      margin: 0;
+      align-items: center;
+      @media only screen and (max-width: $screen-sm-down) {
+        flex-wrap: wrap;
+      }
+    }
+    form {
+      align-items: flex-end;
+    }
+  }
+  &__btn-order {
+    width: 464px;
+    max-width: 100%;
+    i {
+      margin-right: 8px;
+      font-size: 18px !important;
+    }
+  }
+  &__label-link {
+    align-items: baseline;
+    flex-wrap: wrap;
+    @include display-flex();
+    h4, h5 {
+      margin-right: 26px;
+    }
+    a {
+      font-size: $font-size--sm;
+      font-weight: $fw--bold;
+    }
+  }
+}

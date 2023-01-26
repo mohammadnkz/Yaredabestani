@@ -1,0 +1,33 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-empty {
+  text-align: center;
+  @media only screen and (min-width: $screen-xs) {
+    margin-top: 90px;
+    margin-bottom: 120px;
+  }
+  @media only screen and (max-width: $screen-xs-down) {
+    margin-top: 50px;
+    margin-bottom: 60px;
+  }
+  &__icon {
+    display: inline-block;
+    max-width: 100%;
+    @media only screen and (min-width: $screen-xs) {
+      margin-bottom: 40px;
+    }
+    @media only screen and (max-width: $screen-xs-down) {
+      margin-bottom: 34px;
+    }
+  }
+  &__btn {
+    @media only screen and (min-width: $screen-xs) {
+      margin-top: 44px;
+    }
+    @media only screen and (max-width: $screen-xs-down) {
+      margin-top: 24px;
+    }
+  }
+}

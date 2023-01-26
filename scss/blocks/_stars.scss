@@ -1,0 +1,46 @@
+.tt-stars {
+  position: relative;
+  display: inline-block;
+  @include backface-visibility(hidden);
+  & > span {
+    &::before {
+      display: block;
+      content: '\e878 \e878 \e878 \e878 \e878';
+      margin: 0;
+      font-size: 16px;
+    }
+    &:nth-child(1) {
+      &::before {
+        width: 100%;
+      }
+    }
+    &:nth-child(2) {
+      width: 0%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+  }
+  input {
+    display: none;
+  }
+  &__input {
+    cursor: pointer;
+  }
+  &#{&}__stars-01 > span:nth-child(2) {
+    width: 20%;
+  }
+  &#{&}__stars-02 > span:nth-child(2) {
+    width: 40%;
+  }
+  &#{&}__stars-03 > span:nth-child(2) {
+    width: 60%;
+  }
+  &#{&}__stars-04 > span:nth-child(2) {
+    width: 80%;
+  }
+  &#{&}__stars-05 > span:nth-child(2) {
+    width: 100%;
+  }
+}

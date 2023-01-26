@@ -1,0 +1,36 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-add-to-cart {
+  display: none;
+  position: relative;
+  width: 434px;
+  max-width: 100%;
+  padding: 60px 40px;
+  margin: 0 auto;
+  text-align: center;
+  & > i {
+    position: relative;
+    display: inline-block;
+    top: -12px;
+    font-size: 38px;
+  }
+  p {
+    margin-bottom: 28px;
+    font-size: $fs--h5;
+    font-weight: $fw--bold;
+  }
+  .btn {
+    height: 46px;
+    @include display-inline-flex();
+    i {
+      margin-right: 4px;
+      font-size: 32px;
+    }
+  }
+}
+
+.mfp-content .tt-add-to-cart {
+  display: block;
+}

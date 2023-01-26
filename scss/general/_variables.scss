@@ -1,0 +1,45 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+//media
+$screen-xs:                   480px;
+$screen-sm:                   768px;
+$screen-md:                   1025px;
+$screen-lg:                   1400px;
+$screen-xl:                   1832px;
+$screen-xxl:                  1920px;
+
+$screen-xs-down:              $screen-xs - 1;
+$screen-sm-down:              $screen-sm - 1;
+$screen-md-down:              $screen-md - 1;
+$screen-lg-down:              $screen-lg - 1;
+$screen-xl-down:              $screen-xl - 1;
+$screen-xxl-down:             $screen-xxl - 1;
+
+//font size
+$font-size:                   16px;
+$fs--h1:                      60px;
+$fs--h2:                      60px;
+$fs--h3:                      44px;
+$fs--h4:                      30px;
+$fs--h5:                      22px;
+$fs--h6:                      18px;
+$font-size--sm:               14px;
+$font-size--lg:               18px;
+
+//line height
+$line-height:                 1.75;
+$lh--h1:                      1.216;
+$lh--h2:                      1.216;
+$lh--h3:                      1.272;
+$lh--h4:                      1.4;
+$lh--h5:                      1.41;
+$lh--h6:                      1.555;
+
+//font weight
+$fw--light:                   300;
+$fw--regular:                 400;
+$fw--semi-bold:               600;
+$fw--bold:                    700;
+$fw--extra-bold:              800;

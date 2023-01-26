@@ -1,0 +1,42 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+$fs-btn-vw: 19px;
+.tt-product-btn-vw {
+  align-items: center;
+  @include display-inline-flex();
+  label {
+    margin: 0;
+    i {
+      font-size: $fs-btn-vw;
+      cursor: pointer;
+      &:before {
+        margin: 0;
+      }
+    }
+    input {
+      display: none;
+    }
+    &:not(first-child) i {
+      margin-left: 6px;
+    }
+    &:not(last-child) i {
+      margin-right: 6px;
+    }
+    &:first-child {
+      i {
+        &.icon-th-large {
+          @media only screen and (max-width: $screen-sm-down) {
+            display: none;
+          }
+        }
+        &.icon-check-empty {
+          @media only screen and (min-width: $screen-sm) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

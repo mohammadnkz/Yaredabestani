@@ -1,0 +1,27 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-elements {
+  &__img-bnts {
+    position: relative;
+    img {
+      position: absolute;
+      width: 100%;
+      min-height: 100%;
+      left: 0;
+      top: 0;
+    }
+    div {
+      @media only screen and (min-width: $screen-xs) {
+        padding: 100px 0;
+      }
+      @media only screen and (max-width: $screen-sm-down) {
+        padding: 80px 0;
+      }
+      a {
+        margin: 0 14px;
+      }
+    }
+  }
+}

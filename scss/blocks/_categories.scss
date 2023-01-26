@@ -1,0 +1,98 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-categories {
+  li {
+    position: relative;
+    backface-visibility: hidden;
+    a {
+      position: relative;
+      display: inline-block;
+      padding-right: 40px;
+      font-weight: $fw--bold;
+      font-size: $font-size--sm;
+      align-items: flex-start;
+      @include display-inline-flex();
+      span {
+        margin-left: 4px;
+      }
+    }
+    ul {
+      display: none;
+    }
+  }
+  //margins system
+  & > li {
+    & > a {
+      margin-top: 10px;
+    }
+    ul {
+      margin-top: 10px;
+      @media only screen and (min-width: $screen-lg) {
+        margin-left: 28px;
+      }
+      @media only screen and (max-width: $screen-lg-down) {
+        margin-left: 14px;
+      }
+      & > li:not(:first-child) a {
+        margin-top: 10px;
+      }
+      li:first-child > a {
+        margin-top: 0;
+      }
+    }
+  }
+  &__next {
+    position: absolute;
+    height: 24px;
+    width: 48px;
+    right: 0;
+    top: 12px;
+    cursor: pointer;
+    font-size: 8px;
+    @include display-flex();
+    @include _flex-center();
+  }
+  &__open > &__next {
+    @include rotate(180deg);
+  }
+  &:not(.tt-categories__single) {
+    li {
+      a {
+        &::before {
+          display: inline-block;
+          content: '';
+          margin: 0 !important;
+          margin-top: 1px !important;
+          margin-right: 8px !important;
+          font-size: 20px;
+          border: solid 2px transparent;
+          border-radius: 50%;
+          min-width: 20px;
+          @include square(20px, !important);
+          @include _myfont_styles();
+        }
+        &::after {
+          position: absolute;
+          left: 2px;
+          top: 7px;
+          @include _myfont_styles();
+          content: '\e8fb';
+          font-size: 10px;
+          display: none;
+        }
+      }
+      &.active {
+        & > a {
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  &:not(.tt-categories__single) &__next::before {
+    margin: 0;
+  }
+}

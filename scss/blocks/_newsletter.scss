@@ -1,0 +1,110 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-newsletter {
+  position: relative;
+  display: block;
+  input,
+  button {
+    height: 46px;
+  }
+  button {
+    justify-content: center;
+    will-change: width;
+  }
+  &:not(.tt-newsletter__design-mobile) {
+    input,
+    button {
+      @media only screen and (max-width: $screen-md-down) {
+        display: block;
+        width: 100% !important;
+      }
+    }
+  }
+  &#{&}__design-mobile {
+    input,
+    button {
+      display: block;
+      width: 100% !important;
+    }
+  }
+
+  &:not(tt-newsletter__design-mobile) {
+    input {
+      @media only screen and (max-width: $screen-md-down) {
+        margin-bottom: 10px;
+      }
+      @media only screen and (min-width: $screen-md) {
+        padding-right: 150px;
+      }
+    }
+  }
+  &#{&}__design-mobile {
+    input {
+      margin-bottom: 10px;
+    }
+  }
+  button {
+    min-width: 130px;
+    span {
+      font-size: $font-size--sm;
+    }
+  }
+  &:not(.tt-newsletter__design-mobile) {
+    button {
+      @media only screen and (min-width: $screen-md) {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 0;
+      }
+      @media only screen and (max-width: $screen-md-down) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+  &#{&}__design-mobile {
+    button {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &__message {
+    button {
+      min-width: 100%;
+      cursor: default;
+      font-weight: $fw--regular;
+    }
+  }
+  &__text-default {
+    white-space: nowrap;
+  }
+  &__text-error,
+  &__text-complete {
+    display: none;
+    white-space: nowrap;
+  }
+  &__text-error,
+  &__text-complete {
+    i {
+      margin-right: 4px;
+      vertical-align: middle;
+      margin-top: -4px;
+      &::before {
+        font-size: 20px;
+      }
+    }
+  }
+  &:not(.tt-newsletter__design-mobile) &__text-error,
+  &:not(.tt-newsletter__design-mobile) &__text-complete {
+    @media only screen and (max-width: $screen-xs-down) {
+      font-size: $font-size--sm - 2px !important;
+    }
+  }
+  &__design-mobile &__text-error,
+  &__design-mobile &__text-complete {
+    font-size: $font-size--sm - 2px !important;
+  }
+}

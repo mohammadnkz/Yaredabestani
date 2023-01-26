@@ -1,0 +1,35 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-comments {
+  &__title {
+    margin-bottom: 44px;
+    font-size: 22px;
+    font-weight: $fw--bold;
+  }
+  &__section {
+    @include display-flex();
+  }
+  & > &__section {
+    margin-top: 44px;
+  }
+  & > &__section &__section {
+    margin-top: 24px;
+  }
+  &__image {
+    max-width: 64px;
+    min-width: 32px;
+    margin-right: 16px;
+  }
+  &__info {
+    margin-bottom: 8px;
+    font-size: 12px;
+    span {
+      font-weight: $fw--extra-bold;
+    }
+  }
+  &__reply {
+    font-weight: $fw--bold;
+  }
+}

@@ -1,0 +1,31 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-login {
+  max-width: 640px;
+  margin: 0 auto 112px;
+  box-sizing: content-box;
+  overflow: hidden;
+  a {
+    font-weight: $fw--bold;
+  }
+  &__title {
+    margin-bottom: 34px;
+    text-align: center;
+    p {
+      margin: 0;
+      @include _style-h5();
+      @media only screen and (max-width: $screen-sm-down) {
+        font-size: $font-size--lg;
+      }
+    }
+  }
+}
+
+.shopify-challenge__container {
+  margin: 112px auto !important;
+  .g-recaptcha, p {
+    margin-bottom: 40px !important;
+  }
+}

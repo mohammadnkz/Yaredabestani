@@ -1,0 +1,78 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+body {
+  font-size: $font-size;
+  line-height: $line-height;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $fw--bold;
+}
+h1 {
+  font-size: $fs--h1;
+  line-height: $lh--h1;
+}
+h2 {
+  font-size: $fs--h2;
+  line-height: $lh--h2;
+}
+h3 {
+  font-size: $fs--h3;
+  line-height: $lh--h3;
+}
+h4 {
+  font-size: $fs--h4;
+  line-height: $lh--h4;
+}
+h5 {
+  font-size: $fs--h5;
+  line-height: $lh--h5;
+}
+h6 {
+  font-size: $fs--h6;
+  line-height: $lh--h6;
+}
+
+p {
+  font-weight: $fw--regular;
+}
+
+img {
+  image-rendering: auto;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  display: inline-block;
+  -webkit-tap-highlight-color: transparent;
+  &:hover,
+  &:visited,
+  &:active,
+  &:link {
+    text-decoration: none;
+  }
+}
+
+a, img {
+  &:focus {
+    outline: 0;
+  }
+}
+
+ul, ol {
+  @include _list-style-off();
+}
+
+[class^="icon-"] {
+  @include _flex-center();
+  @include display-inline-flex();
+  &::before {
+    margin: 0;
+  }
+}

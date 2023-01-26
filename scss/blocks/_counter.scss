@@ -1,0 +1,60 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-counter {
+  position: relative;
+  width: 104px;
+  max-width: 100%;
+  min-width: 70px;
+  @include display-flex();
+  input {
+    height: 46px;
+    text-align: center;
+    font-size: $font-size--sm;
+    font-weight: $fw--bold;
+    &,
+    &:focus {
+      outline: none;
+      border: none;
+      @include box-shadow(none);
+    }
+  }
+  &__control {
+    margin-left: 12px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    @include display-flex();
+    span {
+      height: 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+  &#{&}__inner {
+    width: 86px;
+    input {
+      height: 58px;
+      font-size: 25px;
+      font-weight: $fw--bold;
+      border-bottom: solid 2px transparent;
+    }
+  }
+  &#{&}__inner &__control {
+    position: absolute;
+    padding: 6px 2px;
+    margin: 0;
+    right: 0;
+    height: 100%;
+    @media only screen and (min-width: $screen-md) {
+      @include opacity(0);
+    }
+  }
+  &#{&}__inner:hover &__control {
+    @media only screen and (min-width: $screen-md) {
+      @include opacity(1);
+    }
+  }
+}

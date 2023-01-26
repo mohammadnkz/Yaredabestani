@@ -1,0 +1,135 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-review-shopify {
+  .spr {
+    &-header-title {
+      @include _style-h4();
+      @media only screen and (max-width: $screen-md-down) {
+        display: none;
+      }
+    }
+    &-summary {
+      padding: 32px 0;
+      border-bottom: solid 1px transparent;
+      align-items: center;
+      flex-wrap: wrap;
+      @include display-flex();
+      .spr-summary-actions {
+        margin-left: auto;
+        &-newreview {
+          font-weight: $fw--bold;
+          font-size: $font-size--sm;
+        }
+      }
+    }
+    &-starrating,
+    &-starratings {
+      margin-right: 10px;
+      font-size: 0;
+      .spr-icon {
+        font-size: $font-size;
+        @include _myfont_styles();
+        margin: 0;
+        &::before {
+          content: '\e878';
+        }
+      }
+    }
+    &-content {
+      padding-top: 44px;
+    }
+    &-form-title {
+      margin: 0 0 30px;
+      font-size: 22px;
+    }
+    &-form {
+      fieldset {
+        & > div {
+          margin-bottom: 18px;
+          @include display-flex();
+          @media only screen and (max-width: $screen-xs-down) {
+            flex-wrap: wrap;
+          }
+          label {
+            margin-right: 24px;
+            margin-bottom: 10px;
+            @media only screen and (min-width: $screen-xs) {
+              width: 30%;
+            }
+          }
+          input,
+          .spr-form-input {
+            @media only screen and (min-width: $screen-xs) {
+              width: 70%;
+            }
+          }
+          label,
+          input,
+          .spr-form-input {
+            @media only screen and (max-width: $screen-xs-down) {
+              width: 100%;
+            }
+          }
+          input,
+          textarea.spr-form-input {
+            padding: 12px 20px;
+            border: solid 1px transparent;
+            outline: none;
+            @include box-shadow(none, !important);
+            &::-webkit-input-placeholder {
+              font-weight: $fw--bold;
+              font-size: $font-size--sm;
+            }
+            &::-moz-placeholder {
+              font-weight: $fw--bold;
+              font-size: $font-size--sm;
+            }
+            &:-ms-input-placeholder {
+              font-weight: $fw--bold;
+              font-size: $font-size--sm;
+            }
+            &:-moz-placeholder {
+              font-weight: $fw--bold;
+              font-size: $font-size--sm;
+            }
+          }
+          textarea.spr-form-input {
+            width: 100%;
+            height: 152px;
+            font-weight: $fw--bold;
+            font-size: $font-size--sm;
+            resize: none;
+          }
+        }
+        input {
+          line-height: 1;
+          min-height: 46px;
+        }
+        input[type="submit"] {
+          margin-top: 18px;
+        }
+      }
+      .spr-starrating {
+        align-items: center;
+        @include display-flex();
+      }
+    }
+    &-review {
+      padding-top: 36px;
+      margin-top: 40px;
+      border-top: solid 1px transparent;
+      &-header-title {
+        margin: 6px 0 2px;
+        font-size: $font-size--lg;
+      }
+      &-header-byline {
+        font-size: 12px;
+      }
+      &-content-body {
+        margin: 30px 0 10px;
+      }
+    }
+  }
+}

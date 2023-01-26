@@ -1,0 +1,371 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.prdbut {
+  &__visible {
+    &--disabled {
+      display: none !important;
+    }
+  }
+
+  //all
+  &__title {
+    margin-bottom: 8px;
+    font-size: $font-size--sm;
+    font-weight: $fw--bold;
+    align-items: center;
+    @include display-flex();
+  }
+  &__options {
+    
+  }
+  &__option {
+    .tt-select {
+      max-width: 240px;
+    }
+  }
+  &__val {
+    position: relative;
+    &.active:not(.default):hover::before {
+      border-radius: 50%;
+      border: solid 1px transparent;
+      @include _flex-center();
+      @include display-flex();
+      @include _myfont_styles();
+      @include _center-block-abs();
+      @include square(24px);
+      //@include opacity(0);
+      @include opacity(0.7);
+      content: '\e868';
+      margin: 0;
+      line-height: 24px;
+      @media all and (-ms-high-contrast:none) {
+        line-height: 22px;
+      }
+    }
+  }
+  &__option--design-image &__val,
+  &__option--design-color &__val {
+    span {
+      display: none;
+    }
+  }
+
+  //list
+  &__options--list &__option {
+    display: table;
+    width: 100%;
+    text-align: center;
+    font-size: 0;
+  }
+  &__options--list &__option--design-image,
+  &__options--list &__option--design-color {
+    margin-top: 12px;
+  }
+  &__options--list &__option--design-text,
+  &__options--list &__option--design-bg,
+  &__options--list &__option--design-bg-n-bd {
+    margin-top: 8px;
+  }
+  &__options--list &__val {
+    display: inline-block;
+    padding: 0 4px;
+    margin: 3px 0;
+    border: solid 1px transparent;
+    font-size: $font-size--sm;
+    font-weight: $fw--bold;
+    cursor: pointer;
+    @include _flex-center();
+    @include display-inline-flex();
+    @include backface-visibility(hidden);
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+    label {
+      display: none;
+    }
+  }
+  &__options--list &__option:not([class*='prdbut__option--design-']) &__val {
+    &.disabled {
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc(100% - 6px);
+        height: 1px;
+        top: calc(50% + 1px);
+        left: 50%;
+        @include transform(translate(-50%));
+      }
+    }
+  }
+  &__options--list &__option--design-text &__val {
+    &.disabled {
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc(100% - 6px);
+        height: 1px;
+        top: calc(50% + 1px);
+        left: 50%;
+        @include transform(translate(-50%));
+      }
+    }
+  }
+  &__options--list &__option--design-image &__val,
+  &__options--list &__option--design-color &__val {
+    &.active,
+    &:not(.disabled):hover {
+      @include scale(1.25);
+    }
+  }
+  &__options--list &__option--design-bg &__val,
+  &__options--list &__option--design-bg-n-bd &__val {
+    padding: 0 10px;
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+    &.disabled {
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc(100% - 20px);
+        height: 1px;
+        top: calc(50% + 1px);
+        left: 50%;
+        @include transform(translate(-50%));
+      }
+    }
+  }
+  &__options--list &__option--design-bg-n-bd &__val {
+    border: solid 1px transparent;
+  }
+  &__options--list &__option--design-image &__val {
+    width: 38px;
+    height: 38px;
+    will-change: transform;
+    @include backface-visibility(hidden);
+    &.disabled {
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc(100% + 24px);
+        height: 1px;
+        top: 50%;
+        left: 50%;
+      }
+      &::after {
+        @include transform(translate(-50%) rotate(45deg));
+      }
+      &::before {
+        @include transform(translate(-50%) rotate(-45deg));
+      }
+    }
+  }
+  &__options--list &__option--design-color &__val,
+  &__options--list &__option--design-color &__val {
+    border: solid 2px transparent;
+    border-radius: 50%;
+    @include square(24px);
+    &.disabled {
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc(100% + 4px);
+        height: 1px;
+        top: 50%;
+        left: 50%;
+      }
+      &::after {
+        @include transform(translate(-50%) rotate(45deg));
+      }
+      &::before {
+        @include transform(translate(-50%) rotate(-45deg));
+      }
+    }
+  }
+
+  //page
+  &__options--page &__option {
+    display: table;
+    width: 100%;
+    margin-bottom: 36px;
+    font-size: 0;
+  }
+  &__options--page &__val {
+    display: inline-block;
+    padding: 0 4px;
+    margin: 6px;
+    border: solid 1px transparent;
+    font-size: $font-size--sm;
+    font-weight: $fw--bold;
+    cursor: pointer;
+    @include _flex-center();
+    @include display-inline-flex();
+    @include backface-visibility(hidden);
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+  }
+  &__options--page &__option:not([class*='prdbut__option--design-']) &__val {
+    &.disabled {
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc(100% - 6px);
+        height: 1px;
+        top: calc(50% + 1px);
+        left: 50%;
+        @include transform(translate(-50%));
+      }
+    }
+  }
+  &__options--page &__option--design-text &__val {
+    &.disabled {
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc(100% - 6px);
+        height: 1px;
+        top: calc(50% + 1px);
+        left: 50%;
+        @include transform(translate(-50%));
+      }
+    }
+  }
+  &__options--page &__option--design-image &__val,
+  &__options--page &__option--design-color &__val {
+    &.active,
+    &:not(.disabled):hover {
+      @include scale(0.9);
+    }
+  }
+  &__options--page &__option--design-bg &__val,
+  &__options--page &__option--design-bg-n-bd &__val {
+    padding: 0 10px;
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+    &.disabled {
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc(100% - 20px);
+        height: 1px;
+        top: calc(50% + 1px);
+        left: 50%;
+        @include transform(translate(-50%));
+      }
+    }
+  }
+  &__options--page &__option--design-bg-n-bd &__val {
+    border: solid 1px transparent;
+  }
+  &__options--page &__option--design-image &__val {
+    width: 58px;
+    height: 60px;
+    will-change: transform;
+    @include backface-visibility(hidden);
+    &.disabled {
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc(100% + 24px);
+        height: 1px;
+        top: 50%;
+        left: 50%;
+      }
+      &::after {
+        @include transform(translate(-50%) rotate(45deg));
+      }
+      &::before {
+        @include transform(translate(-50%) rotate(-45deg));
+      }
+    }
+  }
+  &__options--page &__option--design-color &__val,
+  &__options--page &__option--design-colour &__val {
+    border: solid 2px transparent;
+    border-radius: 50%;
+    @include square(58px);
+    &.disabled {
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc(100% + 4px);
+        height: 1px;
+        top: 50%;
+        left: 50%;
+      }
+      &::after {
+        @include transform(translate(-50%) rotate(45deg));
+      }
+      &::before {
+        @include transform(translate(-50%) rotate(-45deg));
+      }
+    }
+  }
+  &__options--page &__option--design-label &__val {
+    border: solid 2px transparent;
+    border-radius: 50%;
+    @include square(58px);
+    @include scale(1, !important);
+    &.disabled {
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: calc(100% + 4px);
+        height: 1px;
+        top: 50%;
+        left: 50%;
+      }
+      &::after {
+        @include transform(translate(-50%) rotate(45deg));
+      }
+      &::before {
+        @include transform(translate(-50%) rotate(-45deg));
+      }
+    }
+    &.active,
+    &:not(.disabled):hover {
+
+    }
+    label {
+      display: block;
+      position: absolute;
+      max-width: inherit;
+      bottom: 100%;
+      left: 50%;
+      margin-bottom: 20px;
+      margin-left: -40px;
+      background-color: white;
+      border: solid 1px black;
+      font-weight: $fw--regular;
+      @include square(80px);
+    }
+  }
+
+  &__option:first-of-type &__val.disabled,
+  &__title:first-of-type + &__option &__val.disabled {
+    &::after,
+    &::before {
+      display: none !important;
+    }
+  }
+}

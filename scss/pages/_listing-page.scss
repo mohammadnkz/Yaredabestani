@@ -1,0 +1,144 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-listing-page {
+  &__subcategories {
+    margin-bottom: 30px;
+  }
+  &__view-options {
+    @media only screen and (min-width: $screen-md) {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      margin-top: 40px;
+      margin-bottom: 60px;
+    }
+  }
+  &__category-name {
+    & > * {
+      margin: 0;
+      @media only screen and (max-width: $screen-sm-down) {
+        font-size: $fs--h4;
+      }
+    }
+  }
+  &__products {
+    position: relative;
+    margin-bottom: 60px;
+    overflow: hidden;
+    .tt-product-view:not(.tt-product-list) {
+      .tt-product {
+        margin-bottom: 24px;
+      }
+    }
+    & > .row {
+      &.tt-product-list {
+        @media only screen and (max-width: $screen-md-down) {
+          margin-left: 0;
+          margin-right: 0;
+        }
+        & > [class^='col-'] {
+          @media only screen and (max-width: $screen-md-down) {
+            padding-left: 24px;
+            padding-right: 24px;
+          }
+        }
+      }
+    }
+  }
+  &__promobox {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    @media only screen and (min-width: $screen-md) {
+      margin-top: 50px;
+    }
+    img {
+      position: absolute;
+      height: auto;
+      min-height: 100%;
+      width: auto;
+      min-width: 100%;
+      @media only screen and (max-width: $screen-md-down) {
+        display: none !important;
+      }
+    }
+    &-text {
+      position: relative;
+      @media only screen and (min-width: $screen-lg) {
+        padding: 110px 60px;
+        max-width: 696px;
+      }
+      @media only screen and (min-width: $screen-md) and (max-width: $screen-lg-down) {
+        padding: 40px 60px;
+      }
+      @media only screen and (min-width: $screen-sm) and (max-width: $screen-md-down) {
+        padding: 40px 0px;
+      }
+      div {
+        &,
+        span {
+          @include _style-h4();
+          @media only screen and (min-width: $screen-md) {
+            font-size: 60px;
+          }
+          @media only screen and (max-width: $screen-md-down) {
+            font-size: 30px;
+          }
+        }
+      }
+      p {
+        &,
+        span {
+          font-size: $font-size;
+          font-weight: $fw--regular;
+        }
+      }
+    }
+  }
+}
+
+.tt-layout__fullwidth {
+  .tt-listing-page {
+    padding: 0;
+    &__subcategories,
+    &__view-options,
+    &__category-name,
+    &__products{
+      overflow: hidden;
+    }
+    &__products {
+      & > .row:not(.tt-product-list) {
+        margin-left: 0;
+        margin-right: 0;
+        [class^='col-'] {
+          padding-left: 0;
+          padding-right: 0;
+          & > * {
+            margin: 0;
+          }
+        }
+      }
+    }
+    &__subcategories,
+    &__view-options,
+    &__category-name {
+      @media only screen and (min-width: $screen-md) {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      @media only screen and (max-width: $screen-md-down) {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+    &__promobox {
+      @media only screen and (max-width: $screen-md-down) {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+  }
+}

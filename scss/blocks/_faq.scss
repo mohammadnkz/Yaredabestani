@@ -1,0 +1,42 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-faq {
+  margin-top: 40px;
+  &#{&}--arrow {
+    position: relative;
+    & > i:first-child {
+      position: absolute;
+      top: 8px;
+      left: -58px;
+    }
+  }
+  i {
+    font-size: 18px;
+  }
+  &__section {
+    margin-bottom: 50px;
+    &:not(:first-of-type) {
+      padding-top: 40px;
+      border-top: solid 1px transparent;
+    }
+    &_head {
+      margin-bottom: 22px;
+      @include display-flex();
+      i {
+        margin-right: 16px;
+      }
+      h5 {
+        max-width: 710px;
+        margin: 0;
+        @media only screen and (max-width: $screen-xs-down) {
+          font-size: 20px;
+        }
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
+}

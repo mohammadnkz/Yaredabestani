@@ -1,0 +1,71 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.fotorama {
+  &__arr {
+    display: none !important;
+  }
+  &__fullscreen-icon {
+    display: none !important;
+  }
+  &__fullscreen-custom,
+  &__btn-zoom,
+  &__arrow-custom {
+    display: block !important;
+    cursor: pointer;
+    z-index: 1;
+    @media all and (-ms-high-contrast:none) {
+      z-index: 1000;
+    }
+  }
+  &__fullscreen-custom {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    i {
+      vertical-align: top;
+    }
+  }
+  &__btn-zoom {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    @media only screen and (max-width: $screen-md-down) {
+      display: none !important;
+    }
+    i {
+      vertical-align: top;
+    }
+  }
+  &__arrow-custom {
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+    font-size: 40px;
+    &--disabled {
+      pointer-events: none;
+      @include opacity(0);
+    }
+    &-prev {
+      left: 0;
+    }
+    &-next {
+      right: 0;
+    }
+  }
+  .zoomContainer {
+    display: block !important;
+    @include _center-block-abs(!important);
+  }
+}
+
+.fotorama--fullscreen {
+  .fotorama {
+    &__btn-zoom {
+      display: none !important;
+    }
+  }
+}

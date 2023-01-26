@@ -1,0 +1,51 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-product-page {
+  @media only screen and (min-width: $screen-xs) {
+    padding-top: 78px;
+  }
+  @media only screen and (max-width: $screen-xs-down) {
+    padding-top: 20px;
+  }
+  &__breadcrumbs {
+    @media only screen and (min-width: $screen-md) {
+      margin-bottom: 30px;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      margin-bottom: 22px;
+    }
+  }
+  &__tabs {
+    margin-top: 40px;
+    @media only screen and (max-width: $screen-xs-down) {
+      margin-bottom: 40px;
+    }
+  }
+  &__upsell {
+    @media only screen and (min-width: $screen-xs) {
+      margin-bottom: 100px;
+    }
+    @media only screen and (max-width: $screen-xs-down) {
+      margin-bottom: 20px;
+    }
+    &-title {
+      margin-bottom: 30px;
+      font-weight: $fw--bold;
+      @media only screen and (min-width: $screen-sm) {
+        font-size: $fs--h4;
+        line-height: $lh--h4;
+      }
+      @media only screen and (max-width: $screen-sm-down) {
+        font-size: $fs--h5;
+        line-height: $lh--h5;
+      }
+    }
+  }
+}
+
+.tt-product-page .tt-product-head,
+.tt-product-head + .tt-product-page__tabs {
+  margin-bottom: 92px;
+}

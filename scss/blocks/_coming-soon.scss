@@ -1,0 +1,134 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-comming-soon {
+  & > img {
+    position: fixed;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+  }
+  &__image--pos {
+    &-left {
+      left: 0;
+    }
+    &-right {
+      right: 0;
+    }
+  }
+  &__content {
+    position: relative;
+    width: 608px;
+    max-width: 100%;
+    padding: 30px 12px 40px;
+    z-index: 2;
+    @media only screen and (min-width: $screen-sm) {
+      margin-left: 10%;
+    }
+    &::before {
+      content: '';
+      display: block;
+      @include _stretch-block();
+      @include opacity(.5);
+      z-index: -1;
+    }
+    h1 {
+      @media only screen and (min-width: $screen-sm) {
+        margin-bottom: 60px;
+      }
+      @media only screen and (max-width: $screen-sm-down) {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+    }
+    h4 {
+      @media only screen and (max-width: $screen-sm-down) {
+        font-size: 20px;
+      }
+    }
+  }
+  &__newsletter {
+    margin-top: 60px;
+  }
+  &__form {
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    @include display-flex();
+    & > label {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-right: 24px;
+    }
+    form {
+      width: 490px;
+    }
+  }
+  &__countdown {
+    @media only screen and (min-width: $screen-xs) {
+      margin: 60px 0;
+    }
+    @media only screen and (max-width: $screen-xs-down) {
+      margin: 30px 0;
+    }
+    .countdown-row {
+      font-size: $font-size--sm;
+      font-weight: $fw--bold;
+      @include display-flex();
+      .countdown-section {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        white-space: nowrap;
+        border-radius: 50%;
+        flex-direction: column;
+        @include _flex-center();
+        @include display-inline-flex();
+        @include square(74px);
+        @media only screen and (max-width: $screen-sm-down) {
+          @include square(42px);
+        }
+        &:not(:last-child) {
+          margin-right: 60px;
+          @media only screen and (max-width: $screen-sm-down) {
+            margin-right: 40px;
+          }
+          @media only screen and (max-width: $screen-xs-down) {
+            margin-right: 12px;
+          }
+        }
+        span {
+          display: block;
+          clear: both;
+          font-weight: $fw--bold;
+          line-height: 1.2;
+        }
+        .countdown-amount {
+          font-size: 60px;
+          @media only screen and (max-width: $screen-sm-down) {
+            font-size: 30px;
+          }
+          @media only screen and (max-width: $screen-xs-down) {
+            font-size: $font-size--lg;
+          }
+        }
+        .countdown-period {
+          font-size: $font-size--lg;
+          @media only screen and (max-width: $screen-sm-down) {
+            font-size: $font-size;
+          }
+          @media only screen and (max-width: $screen-xs-down) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  &__copyright {
+    margin-top: 60px;
+    p {
+      font-size: 12px;
+    }
+  }
+}

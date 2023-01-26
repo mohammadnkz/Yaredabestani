@@ -1,0 +1,225 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-footer {
+  position: relative;
+  &__content {
+
+  }
+  .tt-logo {
+    margin-top: 8px;
+    margin-bottom: 32px;
+  }
+  &__title {
+    display: inline-block;
+    min-height: 32px;
+    margin-bottom: 20px;
+    font-size: $font-size--lg;
+    font-weight: $fw--bold;
+  }
+  &__info {
+    p {
+      font-size: $font-size--sm;
+      line-height: 1.5;
+    }
+  }
+  &__newsletter {
+    em > strong {
+      font-style: normal;
+      font-weight: $fw--regular;
+    }
+    p {
+      margin-bottom: 18px;
+    }
+    .tt-newsletter {
+      margin-bottom: 48px;
+    }
+  }
+  &__social {
+    margin-right: -10px;
+    @media only screen and (min-width: $screen-md) {
+      margin-bottom: 18px;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      margin-bottom: 38px;
+    }
+  }
+  &__list-menu {
+    margin-bottom: 32px;
+    ul {
+      li {
+        a {
+          font-size: $font-size--sm;
+          font-weight: $fw--bold;
+          line-height: calc(2.22 * #{$font-size--sm});
+        }
+      }
+    }
+  }
+  &__copyright {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  &__pay-tape {
+    min-height: 80px;
+    align-items: center;
+    @include display-flex();
+    @media all and (-ms-high-contrast:none) {
+      height: 80px;
+    }
+    [class^='col-'] {
+      flex-wrap: wrap;
+      @include display-flex();
+    }
+  }
+  &__payment-opt {
+    margin-left: auto;
+  }
+  &__to-top {
+    @include _flex-center();
+    @media only screen and (min-width: $screen-md) {
+      display: none;
+      position: fixed;
+      bottom: -64px;
+      left: 50%;
+      margin-left: -30px;
+      border: solid 2px transparent;
+      border-radius: 50%;
+      z-index: 100;
+      @include square(58px);
+      @include opacity(0.5);
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      width: 100%;
+      height: 44px;
+      @include display-flex();
+    }
+    &-desktop {
+      @media only screen and (min-width: $screen-md) {
+        @include display-flex();
+      }
+    }
+    &.show {
+      @media only screen and (min-width: $screen-md) {
+        bottom: 50px;
+      }
+    }
+    &[data-bind] {
+      @media only screen and (min-width: $screen-md) {
+        @include rotateX(180deg);
+      }
+      &:hover {
+        @media only screen and (min-width: $screen-md) {
+          @include transform(rotateX(180deg) scale(0.9), !important);
+        }
+      }
+      @media only screen and (min-width: $screen-md) {
+        bottom: 50px;
+      }
+    }
+    i {
+      @media only screen and (min-width: $screen-md) {
+        font-size: 32px;
+      }
+      @media only screen and (max-width: $screen-md-down) {
+        margin-right: 4px;
+      }
+      &.icon-up {
+        @media only screen and (min-width: $screen-md) {
+          display: none;
+        }
+      }
+      &.icon-up-open-1 {
+        @media only screen and (max-width: $screen-md-down) {
+          display: none;
+        }
+      }
+    }
+    span {
+      @media only screen and (min-width: $screen-md) {
+        display: none;
+      }
+    }
+    &:hover {
+      @media only screen and (min-width: $screen-md) {
+        @include scale(0.9);
+        @include opacity(1);
+      }
+    }
+  }
+  &#{&}__01 &__content,
+  &#{&}__02 &__content,
+  &#{&}__03 &__content,
+  &#{&}__04 &__content,
+  &#{&}__05 &__content {
+    @media only screen and (min-width: $screen-sm) {
+      padding-top: 92px;
+      padding-bottom: 100px;
+    }
+    @media only screen and (max-width: $screen-sm-down) {
+      padding-top: 40px;
+      padding-bottom: 80px;
+    }
+  }
+  &#{&}__03 &__content {
+    text-align: center;
+  }
+  &#{&}__05 &__content {
+    text-align: center;
+  }
+  &#{&}__05 &__newsletter form {
+    max-width: 432px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &#{&}__06  &__content {
+    min-height: 100px;
+    align-items: center;
+    @include display-flex();
+    @media only screen and (max-width: $screen-sm-down) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+  &#{&}__06 &__content > .container > .row > [class^='col-'] {
+    flex-wrap: wrap;
+    @include display-flex();
+  }
+  &#{&}__06 .tt-logo {
+    margin-right: 18px;
+    margin-bottom: auto;
+  }
+  &#{&}__06 &__social {
+    margin-left: auto;
+    margin-bottom: 0;
+    .tt-btn {
+      margin-left: 6px;
+      margin-right: 6px;
+      border: none !important;
+      @include square(24px);
+      i::before {
+        font-size: $font-size;
+      }
+    }
+  }
+  &#{&}__06#{&}__reverse &__content > .container > .row > [class^='col-'] {
+    flex-direction: row-reverse;
+  }
+  &#{&}__06#{&}__reverse &__social {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  &#{&}__reverse &__content > .container > .row {
+    flex-direction: row-reverse;
+  }
+  &#{&}__reverse &__pay-tape &__copyright {
+    order: 1;
+    margin-left: auto;
+  }
+  &#{&}__reverse &__pay-tape &__payment-opt {
+    margin-left: 0;
+  }
+}

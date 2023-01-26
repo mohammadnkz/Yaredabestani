@@ -1,0 +1,181 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-shp-info {
+  text-align: center;
+  overflow: hidden;
+  &__section {
+    height: 100%;
+    max-width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    @include display-inline-flex();
+    & > * {
+      max-width: 100%;
+    }
+  }
+  &__strong {
+    @include backface-visibility(hidden);
+  }
+  &__number {
+    margin-bottom: 48px;
+    font-size: 30px;
+    font-weight: $fw--bold;
+    border: solid 2px transparent;
+    border-radius: 50%;
+    @include square(100px);
+    @include _flex-center();
+    @include display-flex();
+  }
+  p {
+    @media only screen and(min-width: $screen-sm-down) and(max-width: $screen-md-down) {
+      font-size: 14px;
+    }
+    strong > em,
+    em > strong,
+    span {
+      font-style: normal;
+      font-weight: $fw--bold;
+    }
+  }
+  &#{&}__design-01 &__section {
+    flex-direction: column;
+    @media only screen and (min-width: $screen-md) {
+      padding: 78px 58px;
+    }
+    @media only screen and (max-width: $screen-md-down) and (min-width: $screen-sm) {
+      padding: 60px 32px;
+    }
+    @media only screen and (max-width: $screen-sm-down) {
+      padding: 10px 12px;
+    }
+    i {
+      margin-bottom: 18px;
+      &.icon-phone {
+        font-size: 32px;
+      }
+    }
+  }
+  &#{&}__design-01 &__strong {
+    margin-bottom: 20px;
+    font-size: $fs--h4;
+    line-height: $lh--h4;
+    font-weight: $fw--bold;
+    @media only screen and(min-width: $screen-sm-down) and(max-width: $screen-md-down) {
+      font-size: 24px;
+    }
+  }
+  &#{&}__design-02 &__section {
+    padding: 20px 24px;
+    min-height: 128px;
+    i {
+      margin-right: 24px;
+      margin-bottom: 8px;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+  &#{&}__design-02 &__strong {
+    font-size: $fs--h5;
+    font-weight: $fw--bold;
+    line-height: 1;
+  }
+  &#{&}__design-03 {
+    [class^='col-'] {
+      margin-bottom: 24px;
+    }
+  }
+  &#{&}__design-03 &__section {
+    width: 100%;
+    padding: 20px 24px;
+    min-height: 128px;
+    border: solid 1px transparent;
+    i {
+      margin-right: 24px;
+      margin-bottom: 8px;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+  &#{&}__design-03 &__strong {
+    font-size: $fs--h4;
+    font-weight: $fw--bold;
+    line-height: 1;
+  }
+  &#{&}__design-04 &__section {
+    flex-direction: column;
+    @media only screen and (min-width: $screen-md) {
+      padding: 190px 58px;
+    }
+    @media only screen and (max-width: $screen-md-down) and (min-width: $screen-sm) {
+      padding: 60px 32px;
+    }
+    @media only screen and (max-width: $screen-sm-down) {
+      padding: 20px 12px;
+    }
+    i {
+      margin-bottom: 18px;
+    }
+  }
+  &#{&}__design-04 &__strong {
+    margin-bottom: 20px;
+    font-size: $fs--h4;
+    font-weight: $fw--bold;
+    line-height: 1;
+    @media only screen and(min-width: $screen-sm-down) and(max-width: $screen-md-down) {
+      font-size: 24px;
+    }
+  }
+  i {
+    display: inline-block;
+    font-size: 42px;
+    will-change: transform;
+    @include backface-visibility(hidden);
+  }
+  &__align {
+    &--left {
+      @media only screen and (min-width: $screen-lg) {
+        text-align: left;
+      }
+    }
+    &--right {
+      @media only screen and (min-width: $screen-lg) {
+        text-align: right;
+      }
+    }
+  }
+  @at-root#{&}__design-01 &__align {
+    &--left {
+      @media only screen and (min-width: $screen-lg) {
+        align-items: flex-start;
+      }
+    }
+    &--right {
+      @media only screen and (min-width: $screen-lg) {
+        align-items: flex-end;
+      }
+    }
+  }
+  &__animation#{&}__section:hover {
+    i {
+      @include scale(1.3);
+    }
+  }
+}
+
+/* DOCUMENTATION */
+/*
+//modifiers
+from .tt-shp-info
+=== align ===
+- .tt-shp-info__align--left
+- .tt-shp-info__align--right
+===animation===
+- .tt-shp-info__animation
+- .ttg-animation-icon--wave
+*/

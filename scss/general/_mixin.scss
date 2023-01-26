@@ -1,0 +1,335 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+@mixin square($args, $imp: null) {
+  width: $args $imp;
+  height: $args $imp;
+}
+
+@mixin box-shadow($args, $imp: null) {
+  -webkit-box-shadow: $args $imp;
+  -moz-box-shadow: $args $imp;
+  box-shadow: $args $imp;
+}
+
+@mixin box-sizing($args, $imp: null) {
+  -webkit-box-sizing: $args $imp;
+  -moz-box-sizing: $args $imp;
+  -ms-box-sizing: $args $imp;
+  box-sizing: $args $imp;
+}
+
+@mixin transform($args, $imp: null) {
+  -webkit-transform: $args $imp;
+  -moz-transform: $args $imp;
+  -ms-transform: $args $imp;
+  transform: $args $imp;
+}
+
+@mixin transform-origin($args, $imp: null) {
+  -webkit-transform-origin: $args $imp;
+  -moz-transform-origin: $args $imp;
+  -ms-transform-origin: $args $imp;
+  transform-origin: $args $imp;
+}
+
+@mixin translate($x, $y, $imp: null) {
+  -webkit-transform: translate($x, $y) $imp;
+  -ms-transform: translate($x, $y) $imp;
+  -o-transform: translate($x, $y) $imp;
+  transform: translate($x, $y) $imp;
+}
+
+@mixin translate3d($x, $y, $z, $imp: null) {
+  -webkit-transform: translate3d($x, $y, $z) $imp;
+  -ms-transform: translate3d($x, $y, $z) $imp;
+  -o-transform: translate3d($x, $y, $z) $imp;
+  transform: translate3d($x, $y, $z) $imp;
+}
+
+@mixin translateX($x, $imp: null) {
+  -webkit-transform: translateX($x) $imp;
+  -ms-transform: translateX($x) $imp;
+  -o-transform: translateX($x) $imp;
+  transform: translateX($x) $imp;
+}
+
+@mixin translateY($y, $imp: null) {
+  -webkit-transform: translateY($y) $imp;
+  -ms-transform: translateY($y) $imp;
+  -o-transform: translateY($y) $imp;
+  transform: translateY($y) $imp;
+}
+
+@mixin scale($scale, $imp: null) {
+  -webkit-transform: scale($scale);
+  -ms-transform: scale($scale);
+  -o-transform: scale($scale);
+  transform: scale($scale);
+}
+
+@mixin rotate($deg, $imp: null) {
+  -webkit-transform: rotate($deg) $imp;
+  -ms-transform: rotate($deg) $imp;
+  -o-transform: rotate($deg) $imp;
+  transform: rotate($deg) $imp;
+}
+
+@mixin rotateX($deg, $imp: null) {
+  -webkit-transform: rotateX($deg) $imp;
+  -ms-transform: rotateX($deg) $imp;
+  -o-transform: rotateX($deg) $imp;
+  transform: rotateX($deg) $imp;
+}
+
+@mixin rotateY($deg, $imp: null) {
+  -webkit-transform: rotateY($deg) $imp;
+  -ms-transform: rotateY($deg) $imp;
+  -o-transform: rotateY($deg) $imp;
+  transform: rotateY($deg) $imp;
+}
+
+@mixin filter($args, $imp: null) {
+  -webkit-filter: $args $imp;
+  -moz-filter: $args $imp;
+  -ms-filter: $args $imp;
+  -o-filter: $args $imp;
+  filter: $args $imp;
+}
+
+@mixin opacity($opacity, $imp: null) {
+  -webkit-opacity: $opacity $imp;
+  -mox-opacity: $opacity $imp;
+  -o-opacity: $opacity $imp;
+  opacity: $opacity $imp;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+#{$opacity}*100+")" $imp;
+  filter: alpha(opacity=#{$opacity}*100) $imp;
+}
+
+@mixin animation($args, $imp: null) {
+  -webkit-animation: $args $imp;
+  -ms-animation: $args $imp;
+  -o-animation: $args $imp;
+  animation: $args $imp;
+}
+
+@mixin backface-visibility($val, $imp: null) {
+  -webkit-backface-visibility: $val $imp;
+  -moz-backface-visibility: $val $imp;
+  -ms-backface-visibility: $val $imp;
+  backface-visibility: $val $imp;
+}
+
+@mixin flex($flex, $imp: null) {
+  -webkit-flex: $flex $imp;
+  -ms-flex: $flex $imp;
+  flex: $flex $imp;
+}
+
+@mixin display-flex($imp: null) {
+  display: -moz-box $imp;
+  display: -ms-flexbox $imp;
+  display: -webkit-box $imp;
+  display: -webkit-flex $imp;
+  display: flex $imp;
+}
+@mixin display-inline-flex($imp: null) {
+  display: -moz-inline-box $imp;
+  display: -ms-inline-flexbox $imp;
+  display: -webkit-inline-flex $imp;
+  display: inline-flex $imp;
+}
+
+@mixin _flex-center($imp: null) {
+  justify-content: center $imp;
+  align-items: center $imp;
+}
+
+@mixin _margin-sides--off($imp: null) {
+  margin-left: auto $imp;
+  margin-right: auto $imp;
+}
+
+@mixin _padding-sides--off($imp: null) {
+  padding-left: 0 $imp;
+  padding-right: 0 $imp;
+}
+
+@mixin _stretch-block($imp: null) {
+  position: absolute $imp;
+  top: 0 $imp;
+  bottom: 0 $imp;
+  left: 0 $imp;
+  right: 0 $imp;
+}
+
+@mixin _center-block-abs($imp: null) {
+  position: absolute $imp;
+  left: 50% $imp;
+  top: 50% $imp;
+  @include translate(-50%, -50%, $imp);
+}
+
+@mixin _pseudo-block() {
+  content:'';
+  display: block;
+}
+
+@mixin _list-style-off() {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin _style-h4() {
+  font-size: $fs--h4;
+  line-height: $lh--h4;
+  font-weight: $fw--bold;
+}
+
+@mixin _style-h5() {
+  font-size: $fs--h5;
+  line-height: $lh--h5;
+  font-weight: $fw--bold;
+}
+
+@mixin _style-h6() {
+  font-size: $fs--h6;
+  line-height: $lh--h6;
+  font-weight: $fw--bold;
+}
+
+@mixin _myfont_styles() {
+  font-family: "myfont";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//color
+@mixin _link-color($args, $imp: null) {
+  &,
+  &:visited,
+  &:active,
+  &:link {
+    color: $args $imp;
+  }
+}
+
+@mixin box-shadow($args, $imp: null) {
+  -webkit-box-shadow: $args $imp;
+  -moz-box-shadow: $args $imp;
+  box-shadow: $args $imp;
+}
+
+@mixin color-class($class, $prop, $color) {
+  @if $color == 'transparent' or $color == $theme-transparent or $color != false and lightness($color) != 0 {
+    @if $color == $theme-transparent {
+      $color: transparent;
+    }
+
+    .colorize-#{$class} {
+      #{$prop}: $color !important;
+    }
+    .colorize-#{$class}-h:hover {
+      @media only screen and (min-width: $screen-md) {
+        #{$prop}: $color !important;
+      }
+    }
+    .colorize-#{$class}-imp {
+      #{$prop}: $color !important;
+    }
+    .colorize-#{$class}-h-imp:hover {
+      @media only screen and (min-width: $screen-md) {
+        #{$prop}: $color !important;
+      }
+    }
+  }
+}
+
+@mixin color-class-group($class, $color) {
+  @include color-class('#{$class}-bg', 'background-color', $color);
+  @include color-class('#{$class}-c', 'color', $color);
+  @include color-class('#{$class}-bd', 'border-color', $color);
+}
+
+@function color($color, $default) {
+  @if $color == false or lightness($color) == 0 {
+    $color: $default;
+  }
+
+  @if $color == $theme-transparent {
+    $color: transparent;
+  }
+
+  @return $color;
+}
+
+@mixin colorize-btn($button-bg, $button-bd, $button-c, $button-h-bg, $button-h-bd, $button-h-c, $button-act-bg, $button-act-bd, $button-act-c) {
+  background-color: $button-bg;
+  border-color: $button-bd;
+  @include _link-color($button-c);
+  &:focus {
+    color: $button-c;
+  }
+  &,
+  & > span,
+  & > i {
+    color: $button-c;
+  }
+  &:hover {
+    @media only screen and (min-width: $screen-md) {
+      background-color: $button-h-bg;
+      border-color: $button-h-bd;
+      color: $button-h-c;
+    }
+    i, span {
+      @media only screen and (min-width: $screen-md) {
+        color: $button-h-c;
+      }
+    }
+  }
+  &.tt-btn--hover-effect{
+    &::after {
+      background-color: $button-h-bg;
+    }
+    &:hover {
+      border-color: $button-h-bg;
+    }
+  }
+  &.tt-btn__state--active {
+    background-color: $button-act-bg;
+    border-color: $button-act-bd;
+    @include _link-color($button-act-c);
+    &:focus {
+      color: $button-act-c;
+    }
+    &,
+    & > span,
+    & > i {
+      color: $button-act-c;
+    }
+  }
+};
+
+//animation
+@mixin transition($args, $imp: null) {
+  -webkit-transition: $args $imp;
+  -moz-transition: $args $imp;
+  -ms-transition: $args $imp;
+  transition: $args $imp;
+}
+
+

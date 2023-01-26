@@ -1,0 +1,434 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+//general
+a, [class^="icon-"] {
+  @include transition(color $dur);
+}
+
+
+//modifiers
+.ttg-text-animation-parent .ttg-text-animation--emersion > * {
+  @include transition(transform ease $dur);
+}
+.ttg-image-translate--left,
+.ttg-image-translate--right,
+.ttg-image-translate--top,
+.ttg-image-translate--bottom,
+.ttg-image-scale {
+  img {
+    @include transition(transform ease $dur);
+  }
+}
+.ttg-transform-in-load,
+.ttg-loading::after {
+  @include transition(opacity $dur);
+}
+
+
+//buttons, inputs
+input,
+textarea,
+select,
+button,
+.btn,
+.tt-btn {
+  -webkit-transition: background-color $dur, border-color $dur, color $dur;
+  -moz-transition: background-color $dur, border-color $dur, color $dur;
+  -ms-transition: background-color $dur, border-color $dur, color $dur;
+  -o-transition: background-color $dur, border-color $dur, color $dur;
+  transition: background-color $dur, border-color $dur, color $dur;
+}
+.btn,
+.tt-btn {
+  & > span,
+  & > i {
+    @include transition(color $dur);
+  }
+  &.tt-btn--hover-effect::after {
+    -webkit-transition: -webkit-transform 0.3s, opacity $dur;
+    -moz-transition: -moz-transform 0.3s, opacity $dur;
+    transition: transform 0.3s, opacity $dur;
+  }
+}
+
+
+//color
+.tt-cart__product_info a p,
+.tt-wishlist__product_info a p,
+.tt-counter__inner .tt-counter__control span,
+.tt-layer-nav__product-info a > p,
+.tt-layer-nav__prod-list-section a > p {
+  @include transition(color $dur);
+}
+
+
+//border
+.tt-cart__product_image img,
+.tt-wishlist__product_image img,
+.tt-header__search-dropdown img,
+.tt-header__cart-list ul li img,
+.tt-layer-nav__product-image {
+  @include transition(border-color $dur);
+}
+
+
+//background-color
+.tt-header__user-list > ul li,
+.tt-header__settings-list > ul li {
+  @include transition(background-color $dur);
+}
+
+
+//transform
+.tt-categories__next {
+  @include transition(transform $dur);
+}
+
+
+//all
+.tt-footer__to-top,
+.tt-header__btn-info i,
+.tt-newsletter .btn,
+.tt-categories:not(.tt-categories__single) li a::before {
+  @include transition($dur);
+}
+
+.tt-header--build-01,
+.tt-header--build-04 {
+  .tt-header__btn > span {
+    @include transition(0.1s);
+  }
+}
+
+
+//other
+.tt-contacts__map iframe {
+  @include transition(filter $dur);
+}
+
+.tt-carousel-brands .slick-slide {
+  @include transition(opacity $dur);
+}
+
+.tt-gallery__slider {
+  .swiper-btn-next,
+  .swiper-btn-prev {
+    @include transition($dur);
+  }
+  .gallery-thumbs {
+    .swiper-slide img {
+      @include transition($dur);
+    }
+  }
+}
+
+
+
+.TonyM__arw {
+  @media only screen and (min-width: $screen-md) {
+    @include transition(border-color $dur);
+  }
+  &::before {
+    @media only screen and (max-width: $screen-md-down) {
+      @include transition($dur);
+    }
+  }
+}
+
+.TonyM__mm--anim_fade {
+  @media only screen and(min-width: $screen-md) {
+    @include transition(opacity $dur);
+  }
+}
+.TonyM__mm--anim_emersion,
+.TonyM__mm--anim_emersion-vert {
+  @media only screen and(min-width: $screen-md) {
+    -webkit-transition: opacity $dur, margin $dur;
+    -moz-transition: opacity $dur, margin $dur;
+    -ms-transition: opacity $dur, margin $dur;
+    -o-transition: opacity $dur, margin $dur;
+    transition: opacity $dur, margin $dur;
+  }
+}
+.TonyM__ttl-img img {
+  @include transition($dur);
+}
+.TonyM--ready[data-tm-mob='true'] {
+  @media only screen and(max-width: $screen-md-down) {
+    @include transition(transform $dur / 3 * 2);
+  }
+}
+
+.TonyM + .TonyM__bg {
+  @media only screen and(max-width: $screen-md-down) {
+    @include transition(opacity $dur / 3 * 2);
+  }
+}
+
+.tt-instagram__mask {
+  @media only screen and (min-width: $screen-md) {
+    @include transition(opacity $dur);
+  }
+}
+
+.tt-list-toggle__next > a::after {
+  @include transition($dur);
+}
+
+.tt-logo__curtain::before {
+  @include transition(height $dur);
+}
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-bg,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  -webkit-transition: $dur ease-out;
+  -moz-transition: $dur ease-out;
+  -o-transition: $dur ease-out;
+  transition: $dur ease-out;
+}
+
+.tt-post-nav__prev,
+.tt-post-nav__next {
+  i, p {
+    @include transition(color $dur);
+  }
+}
+
+.prdbut__val {
+  @include transition($dur);
+}
+
+.tt-preloader {
+  &::before,
+  &::after {
+    @include transition(opacity $dur);
+  }
+}
+
+.tt-product__view-overlay .tt-product__hover {
+  @media only screen and (min-width: $screen-md) {
+    @include transition(ease $dur * 1.5);
+  }
+  &::before {
+    @media only screen and (min-width: $screen-md) {
+      @include transition($dur);
+    }
+  }
+}
+.tt-product__hover.tt-product__clr-clk-transp {
+  .ttg-text-animation--emersion,
+  h3,
+  p {
+    @include transition(opacity $dur);
+  }
+}
+.tt-product.tt-product__view-overlay .tt-product__labels {
+  @media only screen and (min-width: $screen-md) {
+    @include transition($dur/3);
+  }
+}
+.tt-product.tt-product__hover-down .tt-product__labels {
+  @media only screen and (min-width: $screen-md) {
+    @include transition($dur);
+  }
+}
+.tt-product.ttg-text-animation-parent .ttg-text-animation--emersion > * {
+  @media only screen and (max-width: $screen-md-down) {
+    @include transition(none, !important);
+  }
+}
+.tt-product-view--list .tt-product__buttons_cart > span {
+  @media only screen and (min-width: $screen-md) {
+    @include transition($dur);
+  }
+}
+.tt-product-btn-vw i {
+  @include transition(color $dur);
+}
+
+.fotorama__arrow-custom {
+  @include transition(opacity $dur);
+}
+
+.tt-product-head__image-preview .slick-slide {
+  @media only screen and (min-width: $screen-md) {
+    @include transition(opacity $dur);
+  }
+}
+.tt-product-head__cart > span {
+  @include transition($dur);
+}
+
+.tt-promobox__hover--fade {
+  @include transition(opacity $dur);
+}
+.tt-promobox__hover--up {
+  @include transition(top $dur);
+}
+.tt-promobox__hover-bg {
+  @include transition($dur);
+}
+.tt-promobox__mask {
+  @include transition(opacity $dur);
+}
+.tt-promobox:not(.tt-promobox__hover-disable):hover .tt-promobox__content > .tt-promobox__text {
+  @include transition($dur/5*3);
+}
+.tt-promobox__hover.tt-promobox__hover--up .tt-promobox__text {
+  @include transition(top $dur);
+}
+
+.irs-slider {
+  -webkit-transition: background-color $dur, border-color $dur;
+  -moz-transition: background-color $dur, border-color $dur;
+  -ms-transition: background-color $dur, border-color $dur;
+  -o-transition: background-color $dur, border-color $dur;
+  transition: background-color $dur, border-color $dur;
+}
+
+.tt-shp-info__strong {
+  @include transition($dur);
+}
+.tt-shp-info i {
+  @include transition($dur);
+}
+
+.tt-sidebar--ready {
+  @media only screen and (max-width: $screen-md-down) {
+    @include transition(transform $dur);
+  }
+}
+.tt-sidebar__btn-open,
+.tt-sidebar__btn-close {
+  @media only screen and (max-width: $screen-md-down) {
+    @include transition($dur);
+  }
+}
+.tt-sidebar__bg--ready {
+  @media only screen and (max-width: $screen-md-down) {
+    @include transition(opacity $dur);
+  }
+}
+.tt-slider-scroll__nav_arrows i {
+  @include transition($dur);
+}
+
+.tt-subcategory p {
+  @include transition($dur);
+}
+
+.tt-tabs__btn > span {
+  @media only screen and (min-width: $screen-md) {
+    @include transition(color $dur);
+  }
+}
+.tt-tabs__head.tt-tabs__head--slider .tt-tabs__btn-prev,
+.tt-tabs__head.tt-tabs__head--slider .tt-tabs__btn-next {
+  @media only screen and (min-width: $screen-md) {
+    @include transition($dur);
+  }
+}
+.tt-tabs__body > div > span {
+  @media only screen and (max-width: $screen-md-down) {
+    @include transition(color $dur);
+  }
+  i {
+    @include transition(transform $dur);
+  }
+}
+.tt-tabs-my-account__head-edit i {
+  @include transition($dur);
+}
+
+.slick-arrow,
+.slick-dots li {
+  @include transition($dur);
+}
+.ttg-transition--off {
+  @include transition(none, !important);
+}
+
+.tt-team {
+  &.ttg-text-animation-parent .ttg-text-animation--emersion {
+    & > * {
+      @media only screen and (max-width: $screen-md-down) {
+        @include transition(none, !important);
+      }
+    }
+  }
+}
+.tt-team__hover {
+  @media only screen and (min-width: $screen-md) {
+    @include transition(ease $dur * 1.5);
+  }
+  &::before {
+    @media only screen and (min-width: $screen-md) {
+      @include transition($dur);
+    }
+  }
+}
+
+.tt-summary {
+  &__list {
+    & > a {
+      i {
+        @include transition($dur);
+      }
+    }
+  }
+  &__products {
+    li {
+      img {
+        @include transition($dur);
+      }
+      p {
+        a {
+          @include transition(color $dur);
+        }
+      }
+    }
+    &_edit,
+    &_delete {
+      i {
+        &::before {
+          @include transition(color $dur);
+        }
+      }
+    }
+    &_param-control {
+      i {
+        @include transition($dur);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

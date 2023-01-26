@@ -1,0 +1,306 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+/*GLOBAL*/
+//palette
+$theme: #fe5a1a;
+$theme2: #ffffff;
+$theme3: #777777;
+$theme4: #333333;
+$theme5: #b7b7b7;
+$theme6: #f5f5f5;
+$theme7: #d8d8d8;
+$theme8: #ebebeb;
+$theme9: #161616;
+$theme10: #0d0d0d;
+$theme11: #1cc373;
+$theme12: #fc2a2e;
+$theme13: #53d3eb;
+$theme14: #fec01a;
+$theme-transparent: transparent;
+$theme-custom: false;
+$theme-custom2: false;
+$theme-custom3: false;
+$theme-custom4: false;
+$theme-custom5: false;
+
+//body
+$theme-body: $theme2;
+
+//typography
+$theme-c: $theme3;
+$theme-paragraph-c: $theme3;
+$theme-head-c: $theme4;
+$theme-link-c: $theme3;
+$theme-link-act-c: $theme;
+$theme-icon-c: $theme5;
+$theme-icon-act-c: $theme4;
+$theme-success: $theme11;
+$theme-error: $theme12;
+
+/*ELEMENTS & BLOCKS*/
+//inputs
+$input-bg: $theme2;
+$input-bd: $theme-transparent;
+$input-c: $theme-c;
+$input-f-bg: $theme2;
+$input-f-bd: $theme;
+
+//buttons
+$button-bg: $theme;
+$button-bd: $theme;
+$button-c: $theme2;
+$button-h-bg: $theme2;
+$button-h-bd: $theme;
+$button-h-c: $theme;
+$button-act-bg: $button-h-bg;
+$button-act-bd: $button-h-bd;
+$button-act-c: $button-h-c;
+$button2-bg: $theme11;
+$button2-bd: $theme11;
+$button2-c: $theme2;
+$button2-h-bg: $theme2;
+$button2-h-bd: $theme11;
+$button2-h-c: $theme11;
+$button2-act-bg: $button2-h-bg;
+$button2-act-bd: $button2-h-bd;
+$button2-act-c: $button2-h-c;
+$button3-bg: $theme4;
+$button3-bd: $theme4;
+$button3-c: $theme2;
+$button3-h-bg: $theme2;
+$button3-h-bd: $theme4;
+$button3-h-c: $theme4;
+$button3-act-bg: $button3-h-bg;
+$button3-act-bd: $button3-h-bd;
+$button3-act-c: $button3-h-c;
+$button4-bg: $theme-transparent;
+$button4-bd: $theme-transparent;
+$button4-c: $theme5;
+$button4-h-bg: $theme-transparent;
+$button4-h-bd: $theme;
+$button4-h-c: $theme;
+$button4-act-bg: $theme;
+$button4-act-bd: $theme;
+$button4-act-c: $theme2;
+$button5-bg: $theme-transparent;
+$button5-bd: $theme-transparent;
+$button5-c: $theme5;
+$button5-h-bg: $theme-transparent;
+$button5-h-bd: $theme11;
+$button5-h-c: $theme11;
+$button5-act-bg: $theme11;
+$button5-act-bd: $theme11;
+$button5-act-c: $theme2;
+$button6-bg: $theme11;
+$button6-bd: $theme11;
+$button6-c: $theme2;
+$button6-h-bg: $theme-transparent;
+$button6-h-bd: $theme11;
+$button6-h-c: $theme11;
+$button6-act-bg: $theme11;
+$button6-act-bd: $theme11;
+$button6-act-c: $theme2;
+$button7-bg: $theme-transparent;
+$button7-bd: $theme2;
+$button7-c: $theme2;
+$button7-h-bg: $theme2;
+$button7-h-bd: $theme2;
+$button7-h-c: $theme;
+$button7-act-bg: $button7-h-bg;
+$button7-act-bd: $button7-h-bd;
+$button7-act-c: $button7-h-c;
+$button8-bg: $theme-transparent;
+$button8-bd: $theme;
+$button8-c: $theme;
+$button8-h-bg: $theme;
+$button8-h-bd: $theme;
+$button8-h-c: $theme2;
+$button8-act-bg: $button8-h-bg;
+$button8-act-bd: $button8-h-bd;
+$button8-act-c: $button8-h-c;
+
+//labels
+$label-c: $theme2;
+$label-sale-bg: $theme12;
+$label-sale-percent-bg: $theme12;
+$label-new-bg: $theme13;
+$label-hot-bg: $theme14;
+$label-in-stock-bg: $theme11;
+$label-out-stock-bg: $theme9;
+
+//social
+$social-bg: $theme4;
+$social-bd: $theme4;
+$social-icon-c: $theme2;
+$social-h-bg: $theme2;
+$social-h-bd: $theme2;
+$social-icon-h-c: $theme;
+$social2-bg: $theme-transparent;
+$social2-bd: $theme-transparent;
+$social2-icon-c: $theme2;
+$social2-h-bg: $theme-transparent;
+$social2-h-bd: $theme-transparent;
+$social2-icon-h-c: $theme;
+$social3-bg: $theme-transparent;
+$social3-bd: $theme2;
+$social3-icon-c: $theme2;
+$social3-h-bg: $theme2;
+$social3-h-bd: $theme2;
+$social3-icon-h-c: $theme;
+$social4-bg: $theme-transparent;
+$social4-bd: $theme-transparent;
+$social4-icon-c: $theme5;
+$social4-h-bg: $theme-transparent;
+$social4-h-bd: $theme;
+$social4-icon-h-c: $theme;
+
+//newsletter
+$newsletter-bg: $input-bg;
+$newsletter-bd: $input-bd;
+$newsletter-c: $input-c;
+$newsletter-f-bg: $input-f-bg;
+$newsletter-f-bd: $input-f-bd;
+$newsletter-btn-bg: $button-bg;
+$newsletter-btn-bd: $button-bd;
+$newsletter-btn-c: $button-c;
+$newsletter-btn-h-bg: $button-h-bg;
+$newsletter-btn-h-bd: $button-h-bd;
+$newsletter-btn-h-c: $button-h-c;
+$newsletter2-bg: $input-bg;
+$newsletter2-bd: $input-bd;
+$newsletter2-c: $input-c;
+$newsletter2-f-bg: $input-f-bg;
+$newsletter2-f-bd: $theme2;
+$newsletter2-btn-bg: $button3-bg;
+$newsletter2-btn-bd: $button3-bd;
+$newsletter2-btn-c: $button3-c;
+$newsletter2-btn-h-bg: $button3-h-bg;
+$newsletter2-btn-h-bd: $button3-h-bd;
+$newsletter2-btn-h-c: $button3-h-c;
+$newsletter3-bg: $theme6;
+$newsletter3-bd: $input-bd;
+$newsletter3-c: $input-c;
+$newsletter3-f-bg: $input-f-bg;
+$newsletter3-f-bd: $theme;
+$newsletter3-btn-bg: $button3-bg;
+$newsletter3-btn-bd: $button3-bd;
+$newsletter3-btn-c: $button3-c;
+$newsletter3-btn-h-bg: $button3-h-bg;
+$newsletter3-btn-h-bd: $button3-h-bd;
+$newsletter3-btn-h-c: $button3-h-c;
+
+//price
+$price-c: $theme4;
+$price-sale-c: $theme12;
+
+//promobox
+$promobox-c: $theme4;
+$promobox-hover-c: $theme4;
+$promobox-hover-c2: $theme3;
+$promobox-hover-c3: $theme;
+
+/*SECTIONS*/
+//header
+$header-d-transparent: 0;
+$header-m-transparent: 0;
+$header-bg: $theme;
+$header-bg2: $theme2;
+$header-bd: $theme8;
+$header-btn-menu-c: $theme;
+$header-btn-search-c: $theme;
+$header-btn-search-close-c: $theme5;
+$header-btn-user-c: $theme;
+$header-btn-wishlist-c: $theme;
+$header-btn-cart-c: $theme;
+$header-btn-settings-c: $theme5;
+$header-btn-info-c: $theme2;
+$header-btns-act-m-c: $theme-icon-act-c;
+$header-counter-bg: $theme6;
+$header-counter-c: $theme;
+$header-search-c: $theme-c;
+$header-tape-bg: $theme9;
+$header-tape-text-c: $theme-c;
+$header-tape-icon-c: $theme2;
+
+$header-bg-v2: $theme2;
+$header-bg-v3: $theme9;
+
+$header-btn-menu-c-v2: $theme2;
+$header-btn-search-c-v2: $theme2;
+$header-btn-search-close-c-v2: $theme2;
+$header-btn-user-c-v2: $theme2;
+$header-btn-wishlist-c-v2: $theme2;
+$header-btn-cart-c-v2: $theme2;
+$header-btn-settings-c-v2: $theme2;
+$header-btn-info-c-v2: $theme;
+
+$header-counter-bg-v2: $theme2;
+
+$header-search-c-v2: $theme2;
+
+$header-tape-text-c-v2: $theme2;
+
+$header-stk-btn-search-c: $theme;
+$header-stk-btn-search-close-c: $theme5;
+$header-stk-btn-user-c: $theme;
+$header-stk-btn-wishlist-c: $theme;
+$header-stk-btn-cart-c: $theme;
+$header-stk-btn-settings-c: $theme5;
+
+$header-stk-counter-bg: $theme6;
+
+$header-stk-search-c: $theme-c;
+
+$header-stk-btn-search-c-v2: $theme2;
+$header-stk-btn-search-close-c-v2: $theme2;
+$header-stk-btn-user-c-v2: $theme2;
+$header-stk-btn-wishlist-c-v2: $theme2;
+$header-stk-btn-cart-c-v2: $theme2;
+$header-stk-btn-settings-c-v2: $theme2;
+
+$header-stk-counter-bg-v2: $theme2;
+
+$header-stk-search-c-v2: $theme2;
+
+//header menu
+$menu-c: $theme-c;
+$menu-h-c: $theme4;
+$menu-act-c: $theme;
+$menu-mm-bg: $theme6;
+$menu-mm-c: $theme-c;
+$menu-mm-h-c: $theme;
+$menu-tt-c: $theme-head-c;
+$menu-tt-h-c: $theme;
+$menu-dd-bg: $theme6;
+$menu-m-bg: $theme2;
+$menu-m-bd: $theme8;
+$menu-m-c: $theme-c;
+$menu-act-m-bg: $theme6;
+$menu-act-m-c: $theme4;
+$menu-act-m-c2: $theme;
+$menu-curtain-m-bg: $theme9;
+$menu-curtain-m-transparent: 0.7;
+
+$menu-c-v2: $theme2;
+$menu-act-c-v2: $theme2;
+
+//footer
+$footer-bg: $theme9;
+$footer-tape-bg: $theme10;
+$footer-menu-title-c: $theme2;
+$footer-menu-c: $theme;
+$footer-menu-h-c: $theme2;
+$footer-info-c: $theme-paragraph-c;
+$footer-info-link-c: $theme;
+$footer-newsletter-c: $theme-paragraph-c;
+$footer-newsletter-c2: $theme2;
+$footer-copyright-c: $theme-c;
+$footer-copyright-link-c: $theme-c;
+$footer-copyright-link-h-c: $theme;
+$footer-payment-icon-c: $theme5;
+$footer-payment-icon-h-c: $theme;
+$footer-btn-up-bg: $theme-transparent;
+$footer-btn-up-bd: $theme-transparent;
+$footer-btn-up-icon-c: $theme-icon-c;

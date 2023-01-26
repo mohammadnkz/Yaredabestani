@@ -1,0 +1,48 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-qv {
+  position: relative;
+  width: 1192px;
+  max-width: 100%;
+  max-height: 800px;
+  margin: 0 auto;
+  overflow: auto;
+  @include box-shadow(0px 0px 50px 10px rgba(0, 0, 0, 0.1));
+  .tt-product-head {
+    @media only screen and (min-width: $screen-sm) {
+      padding: 60px;
+    }
+    @media only screen and (max-width: $screen-sm-down) {
+      padding: 30px;
+    }
+  }
+  .tt-product-head {
+    &__images {
+      display: block;
+    }
+    &__image-main {
+      width: 100%;
+      margin-bottom: 32px;
+    }
+    &__image-preview {
+      min-width: auto;
+      width: 100%;
+      margin-right: 0;
+      margin-left: -4px;
+    }
+    &__sale {
+      justify-content: center;
+      &-countdown {
+        margin-left: 0;
+      }
+    }
+    &__tags {
+      margin-bottom: 0;
+    }
+  }
+  .fotorama__fullscreen-custom {
+    display: none !important;
+  }
+}

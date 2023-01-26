@@ -1,0 +1,167 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-page {
+  &__cont-small {
+    max-width: 910px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__breadcrumbs {
+    @media only screen and (min-width: $screen-md) {
+      padding-top: 50px;
+      margin-bottom: 40px;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      padding-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  &__title {
+    font-size: 22px;
+    font-weight: $fw--bold;
+  }
+  &__arrows {
+    @include display-flex();
+    @include _flex-center();
+    span {
+      height: 32px;
+      cursor: pointer;
+      i {
+        font-size: 34px;
+      }
+    }
+    &--in-head {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+    }
+    &--vertical {
+      @include rotate(90deg);
+    }
+  }
+  &__section {
+    &-head {
+      position: relative;
+      margin-top: 86px;
+      margin-bottom: 34px;
+      align-items: center;
+      @include display-flex();
+      &#{&}--center {
+        @media only screen and (min-width: $screen-sm) {
+          justify-content: center;
+        }
+      }
+      &#{&}--arrows {
+        padding-right: 62px;
+      }
+    }
+  }
+  &__section-head#{&}__section-head--arrows#{&}__section-head--center &__title {
+    @media only screen and (min-width: $screen-sm) {
+      padding-left: 62px;
+    }
+  }
+  &__name,
+  &__name-sm {
+    max-width: 880px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    h1, h2, h3, h4, h5, h6, & > a, & > span {
+      margin: 0;
+      @media only screen and (max-width: $screen-sm-down) {
+        font-size: $fs--h4;
+      }
+    }
+    &.text-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn {
+      margin-top: 28px;
+    }
+  }
+  &__name {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    @include display-flex();
+    &--row {
+      @media only screen and (min-width: $screen-sm) {
+        flex-direction: row;
+      }
+    }
+    h1, h2, h3, h4, h5, h6, a, span {
+      @media only screen and (min-width: $screen-sm) {
+        font-size: $fs--h1;
+      }
+    }
+    p {
+      margin-top: 22px;
+      font-weight: $fw--bold;
+    }
+    & > a, span {
+      font-weight: $fw--bold;
+      line-height: $lh--h1;
+    }
+    & > span {
+      margin: 0 20px;
+      @media only screen and (max-width: $screen-sm-down) {
+        display: none;
+      }
+    }
+    & > *:not(:first-child) {
+      @media only screen and (max-width: $screen-sm-down) {
+        margin-top: 10px;
+      }
+    }
+    &.text-left {
+      align-items: flex-start;
+    }
+    &.text-right {
+      align-items: flex-end;
+    }
+  }
+  &__name--pdg-off {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &__name-sm {
+    h1, h2, h3, h4, h5, h6 {
+      @media only screen and (min-width: $screen-sm) {
+        font-size: $fs--h3;
+      }
+    }
+    p {
+      margin-top: 16px;
+    }
+  }
+  &__pagination {
+    margin-top: 62px;
+    margin-bottom: 60px;
+  }
+}
+
+.tt-layout__fullwidth {
+  .tt-page {
+    &__breadcrumbs,
+    &__name,
+    &__pagination {
+      @media only screen and (min-width: $screen-md) {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      @media only screen and (max-width: $screen-md-down) {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+  }
+}

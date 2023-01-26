@@ -1,0 +1,24 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-sitemap {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  [class^='col-'] {
+    margin-bottom: 50px;
+  }
+  h5 {
+    margin-bottom: 20px;
+  }
+  ul {
+    li {
+      a {
+        font-weight: $fw--bold;
+      }
+      ul {
+        margin-left: 38px;
+      }
+    }
+  }
+}

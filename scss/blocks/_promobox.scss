@@ -1,0 +1,1220 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+/* variables */
+//font size default
+$promobox-fs-h4:              $fs--h4;
+$promobox-fs-p:               $font-size--sm;
+//position on size $screen-xs-down
+//top, bottom
+$promobox-top-bottom:         50px;
+//left, right
+$promobox-left-right:         60px;
+
+$screen-promobox-resp-text:   $screen-xs-down;
+
+//size
+$promobox-size: 74.5%;
+
+.tt-promobox {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  outline: none !important;
+  backface-visibility: hidden;
+  &::before {
+    display: block;
+    content:'';
+  }
+  /* start sizes */
+  &:not(.tt-promobox__size-auto) {
+    &::before {
+      padding-bottom: $promobox-size;
+    }
+  }
+  &#{&}__size {
+    &-high {
+      &::before {
+        padding-bottom: $promobox-size*2;
+      }
+    }
+    &-wide {
+      &::before {
+        padding-bottom: $promobox-size/2;
+      }
+    }
+    &-square {
+      &::before {
+        padding-bottom: 100%;
+      }
+    }
+  }
+  /* end sizes */
+
+  &:not(.tt-promobox__size-auto) &__content {
+    @include _stretch-block();
+    & > img {
+      @include _stretch-block();
+      width: 101%;
+      min-height: 100%;
+    }
+  }
+  &__text {
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    div {
+      margin: 0;
+      @include _style-h4();
+    }
+    & > a {
+      @include _style-h4();
+    }
+    p {
+      line-height: 1.2;
+      font-weight: $fw--bold;
+    }
+    ul {
+      margin-top: 20px;
+      li {
+        &:not(:first-child) {
+          margin-top: 6px;
+        }
+        a {
+          font-size: $font-size--sm;
+          font-weight: $fw--bold;
+        }
+      }
+    }
+  }
+  &__hover {
+    @include _stretch-block();
+    &#{&}--fade {
+      @include opacity(0);
+    }
+    &#{&}--up {
+      top: calc(100% - 60px);
+    }
+  }
+  &__hover-bg {
+    @include _stretch-block();
+    @include opacity(0);
+    &--visible {
+      @include opacity(1);
+    }
+  }
+  &:hover &__hover-bg {
+    @include opacity(0.8);
+  }
+  &__mask {
+    @include _stretch-block();
+    @include opacity(0.3);
+  }
+  &__quantity {
+    position: absolute;
+    right: 34px;
+    top: 34px;
+    border-radius: 50px;
+    font-weight: $fw--bold;
+    font-size: $font-size--sm;
+    @include square(60px);
+    @include display-flex();
+    @include _flex-center();
+  }
+  &:hover &__hover {
+    &--fade {
+      @media only screen and(min-width: $screen-md) {
+        @include opacity(1);
+      }
+    }
+    &--up {
+      @media only screen and(min-width: $screen-md) {
+        top: 0;
+      }
+    }
+  }
+  &:hover &__hover#{&}__hover--up &__text {
+    @media only screen and(min-width: $screen-md) {
+      top: 30px;
+    }
+  }
+  &__hover-disable--md#{&}:hover &__hover {
+    @media only screen and(max-width: $screen-md-down) {
+      display: none !important;
+      @include opacity(0, !important);
+    }
+  }
+  &__hover-disable--sm#{&}:hover &__hover {
+    @media only screen and(max-width: $screen-sm-down) {
+      display: none !important;
+      @include opacity(0, !important);
+    }
+  }
+  &:hover &__hover#{&}__hover--up {
+    @media only screen and(max-width: $screen-md-down) {
+      display: block !important;
+      @include opacity(1, !important);
+    }
+  }
+  &:hover &__hover#{&}__hover--up &__hover-bg {
+    @media only screen and(max-width: $screen-md-down) {
+      @include opacity(1, !important);
+    }
+  }
+  &:not(.tt-promobox__hover-disable):hover &__content > &__text {
+    @include opacity(0);
+  }
+  &__hover-disable--md#{&}:hover &__content > &__text {
+    @media only screen and(max-width: $screen-md-down) {
+      @include opacity(1);
+    }
+  }
+  &__hover-disable--sm#{&}:hover &__content > &__text {
+    @media only screen and(max-width: $screen-sm-down) {
+      @include opacity(1);
+    }
+  }
+
+  /* text positions */
+  //text mixins
+  //fs
+  @mixin text-fs-lg() {
+    & > div {
+      &, & > span {
+        font-size: $promobox-fs-h4;
+      }
+    }
+    & > p {
+      &, & > span {
+        font-size: $promobox-fs-p;
+      }
+    }
+  }
+  @mixin text-fs-md() {
+    & > div {
+      &, & > span {
+        font-size: calc(#{$promobox-fs-h4} / 1.5);
+      }
+    }
+    & > p {
+      &, & > span {
+        font-size: calc(#{$promobox-fs-p} / 1.5);
+      }
+    }
+  }
+  @mixin text-fs-sm() {
+    & > div {
+      &, & > span {
+        font-size: calc(#{$promobox-fs-h4} / 2);
+      }
+    }
+    & > p {
+      &, & > span {
+        font-size: calc(#{$promobox-fs-p} / 2);
+      }
+    }
+  }
+  //pos
+  @mixin text-left-lg() {
+    left: $promobox-left-right;
+    right: auto;
+  }
+  @mixin text-right-lg() {
+    right: $promobox-left-right;
+    left: auto;
+  }
+  @mixin text-top-lg() {
+    top: $promobox-top-bottom;
+    bottom: auto;
+  }
+  @mixin text-bottom-lg() {
+    bottom: $promobox-top-bottom;
+    top: auto;
+  }
+  @mixin text-left-md() {
+    left: calc(#{$promobox-left-right} / 1.5);
+    right: auto;
+  }
+  @mixin text-right-md() {
+    right: calc(#{$promobox-left-right} / 1.5);
+    left: auto;
+  }
+  @mixin text-top-md() {
+    top: calc(#{$promobox-top-bottom} / 1.5);
+    bottom: auto;
+  }
+  @mixin text-bottom-md() {
+    bottom: calc(#{$promobox-top-bottom} / 1.5);
+    top: auto;
+  }
+  @mixin text-left-sm() {
+    left: calc(#{$promobox-left-right} / 2);
+    right: auto;
+  }
+  @mixin text-right-sm() {
+    right: calc(#{$promobox-left-right} / 2);
+    left: auto;
+  }
+  @mixin text-top-sm() {
+    top: calc(#{$promobox-top-bottom} / 2);
+    bottom: auto;
+  }
+  @mixin text-bottom-sm() {
+    bottom: calc(#{$promobox-top-bottom} / 2);
+    top: auto;
+  }
+  @mixin text-center-vertical() {
+    top: 50%;
+    bottom: auto;
+    @include translateY(-50%);
+  }
+  @mixin text-center-vertical() {
+    top: 50%;
+    bottom: auto;
+    @include translateY(-50%);
+  }
+  @mixin text-center-horizontal() {
+    left: 50%;
+    right: auto;
+    text-align: center;
+    @include translateX(-50%);
+  }
+  @mixin text-center() {
+    left: 50%;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    text-align: center;
+    @include translate(-50%, -50%);
+  }
+  //width
+  @mixin text-width-lg() {
+    max-width: calc(100% - #{$promobox-left-right} * 2);
+  }
+  @mixin text-width-md() {
+    max-width: calc(100% - #{$promobox-left-right} / 1.5 * 2);
+  }
+  @mixin text-width-sm() {
+    max-width: calc(100% - #{$promobox-left-right} / 2 * 2);
+  }
+
+  /* start text responsive */
+  &__text {
+    //default
+    @include text-top-lg();
+    @include text-left-lg();
+    @include text-width-lg();
+    @include text-fs-lg();
+    //default md
+    &[data-resp-md="lg"] {
+      @media only screen and(max-width: $screen-md-down) {
+        @include text-top-lg();
+        @include text-left-lg();
+        @include text-width-lg();
+        @include text-fs-lg();
+      }
+    }
+    &[data-resp-md="md"] {
+      @media only screen and(max-width: $screen-md-down) {
+        @include text-top-md();
+        @include text-left-md();
+        @include text-width-md();
+        @include text-fs-md();
+      }
+    }
+    &[data-resp-md="sm"] {
+      @media only screen and(max-width: $screen-md-down) {
+        @include text-top-sm();
+        @include text-left-sm();
+        @include text-width-sm();
+        @include text-fs-sm();
+      }
+    }
+    //default sm
+    &[data-resp-sm="lg"] {
+      @media only screen and(max-width: $screen-sm-down) {
+        @include text-top-lg();
+        @include text-left-lg();
+        @include text-width-lg();
+        @include text-fs-lg();
+      }
+    }
+    &[data-resp-sm="md"] {
+      @media only screen and(max-width: $screen-sm-down) {
+        @include text-top-md();
+        @include text-left-md();
+        @include text-width-md();
+        @include text-fs-md();
+      }
+    }
+    &[data-resp-sm="sm"] {
+      @media only screen and(max-width: $screen-sm-down) {
+        @include text-top-sm();
+        @include text-left-sm();
+        @include text-width-sm();
+        @include text-fs-sm();
+      }
+    }
+    //default xs
+    &[data-resp-xs="lg"] {
+      @media only screen and(max-width: $screen-xs-down) {
+        @include text-top-lg();
+        @include text-left-lg();
+        @include text-width-lg();
+        @include text-fs-lg();
+      }
+    }
+    &[data-resp-xs="md"] {
+      @media only screen and(max-width: $screen-xs-down) {
+        @include text-top-md();
+        @include text-left-md();
+        @include text-width-md();
+        @include text-fs-md();
+      }
+    }
+    &[data-resp-xs="sm"] {
+      @media only screen and(max-width: $screen-xs-down) {
+        @include text-top-sm();
+        @include text-left-sm();
+        @include text-width-sm();
+        @include text-fs-sm();
+      }
+    }
+  }
+  /* end text responsive */
+
+  /* start text positions */
+  &__text#{&}__point {
+    &-lg {
+      &--center-vertical {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @include text-center-vertical();
+        }
+      }
+      &--center-horizontal {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @include text-center-horizontal();
+        }
+      }
+      &--center-vertical#{&}--center-horizontal {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @include translate(-50%, -50%);
+        }
+      }
+      &--center {
+        @include text-center();
+      }
+      &--top {
+        @include text-top-lg();
+        &[data-resp-md="lg"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-top-lg();
+          }
+        }
+        &[data-resp-md="md"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-top-md();
+          }
+        }
+        &[data-resp-md="sm"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-top-sm();
+          }
+        }
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-top-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-top-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-top-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-sm();
+          }
+        }
+      }
+      &--bottom {
+        @include text-bottom-lg();
+        &[data-resp-md="lg"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-bottom-lg();
+          }
+        }
+        &[data-resp-md="md"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-bottom-md();
+          }
+        }
+        &[data-resp-md="sm"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-bottom-sm();
+          }
+        }
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-bottom-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-bottom-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-bottom-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-sm();
+          }
+        }
+      }
+      &--left {
+        text-align: left;
+        @include text-left-lg();
+        &[data-resp-md="lg"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-left-lg();
+          }
+        }
+        &[data-resp-md="md"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-left-md();
+          }
+        }
+        &[data-resp-md="sm"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-left-sm();
+          }
+        }
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-left-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-left-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-left-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-sm();
+          }
+        }
+      }
+      &--right {
+        text-align: right;
+        @include text-right-lg();
+        &[data-resp-md="lg"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-right-lg();
+          }
+        }
+        &[data-resp-md="md"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-right-md();
+          }
+        }
+        &[data-resp-md="sm"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-right-sm();
+          }
+        }
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-right-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-right-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-right-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-sm();
+          }
+        }
+      }
+    }
+    &-md {
+      &--center-vertical {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-center-vertical();
+          }
+        }
+      }
+      &--center-horizontal {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-center-horizontal();
+          }
+        }
+      }
+      &--center-vertical#{&}--center-horizontal {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include translate(-50%, -50%);
+          }
+        }
+      }
+      &--center {
+        @media only screen and(max-width: $screen-md-down) {
+          @include text-center();
+        }
+      }
+      &--top {
+        &[data-resp-md="lg"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-top-lg();
+          }
+        }
+        &[data-resp-md="md"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-top-md();
+          }
+        }
+        &[data-resp-md="sm"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-top-sm();
+          }
+        }
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-top-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-top-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-top-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-sm();
+          }
+        }
+      }
+      &--bottom {
+        &[data-resp-md="lg"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-bottom-lg();
+          }
+        }
+        &[data-resp-md="md"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-bottom-md();
+          }
+        }
+        &[data-resp-md="sm"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-bottom-sm();
+          }
+        }
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-bottom-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-bottom-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-bottom-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-sm();
+          }
+        }
+      }
+      &--left {
+        @media only screen and(max-width: $screen-md-down) {
+          text-align: left;
+        }
+        &[data-resp-md="lg"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-left-lg();
+          }
+        }
+        &[data-resp-md="md"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-left-md();
+          }
+        }
+        &[data-resp-md="sm"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-left-sm();
+          }
+        }
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-left-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-left-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-left-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-sm();
+          }
+        }
+      }
+      &--right {
+        @media only screen and(max-width: $screen-md-down) {
+          text-align: right;
+        }
+        &[data-resp-md="lg"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-right-lg();
+          }
+        }
+        &[data-resp-md="md"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-right-md();
+          }
+        }
+        &[data-resp-md="sm"] {
+          @media only screen and(max-width: $screen-md-down) {
+            @include text-right-sm();
+          }
+        }
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-right-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-right-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-right-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-sm();
+          }
+        }
+      }
+    }
+    &-sm {
+      &--center-vertical {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-center-vertical();
+          }
+        }
+      }
+      &--center-horizontal {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-center-horizontal();
+          }
+        }
+      }
+      &--center-vertical#{&}--center-horizontal {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include translate(-50%, -50%);
+          }
+        }
+      }
+      &--center {
+        @media only screen and(max-width: $screen-sm-down) {
+          @include text-center();
+        }
+      }
+      &--top {
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-top-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-top-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-top-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-sm();
+          }
+        }
+      }
+      &--bottom {
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-bottom-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-bottom-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-bottom-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-sm();
+          }
+        }
+      }
+      &--left {
+        @media only screen and(max-width: $screen-sm-down) {
+          text-align: left;
+        }
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-left-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-left-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-left-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-sm();
+          }
+        }
+      }
+      &--right {
+        @media only screen and(max-width: $screen-sm-down) {
+          text-align: right;
+        }
+        &[data-resp-sm="lg"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-right-lg();
+          }
+        }
+        &[data-resp-sm="md"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-right-md();
+          }
+        }
+        &[data-resp-sm="sm"] {
+          @media only screen and(max-width: $screen-sm-down) {
+            @include text-right-sm();
+          }
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-sm();
+          }
+        }
+      }
+    }
+    &-xs {
+      &--center-vertical {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-center-vertical();
+          }
+        }
+      }
+      &--center-horizontal {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-center-horizontal();
+          }
+        }
+      }
+      &--center-vertical#{&}--center-horizontal {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include translate(-50%, -50%);
+          }
+        }
+      }
+      &--center {
+        @media only screen and(max-width: $screen-xs-down) {
+          @include text-center();
+        }
+      }
+      &--top {
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-top-sm();
+          }
+        }
+      }
+      &--bottom {
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-bottom-sm();
+          }
+        }
+      }
+      &--left {
+        @media only screen and(max-width: $screen-xs-down) {
+          text-align: left;
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-left-sm();
+          }
+        }
+      }
+      &--right {
+        @media only screen and(max-width: $screen-xs-down) {
+          text-align: right;
+        }
+        &[data-resp-xs="lg"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-lg();
+          }
+        }
+        &[data-resp-xs="md"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-md();
+          }
+        }
+        &[data-resp-xs="sm"] {
+          @media only screen and(max-width: $screen-xs-down) {
+            @include text-right-sm();
+          }
+        }
+      }
+    }
+  }
+  &__text#{&}__text--sz-01 {
+    div {
+      font-size: 44px;
+    }
+    p {
+      font-size: 22px;
+      margin-bottom: 0;
+    }
+  }
+  &__hover#{&}__hover--up &__text {
+    max-width: calc(100% - 80px);
+    top: 10px;
+    left: 40px;
+  }
+  /* end text positions */
+
+  /* start text align */
+  &__text#{&}__align {
+    &-lg {
+       &--left {
+         &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+           text-align: left;
+         }
+       }
+       &--right {
+         &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+           text-align: right;
+         }
+       }
+       &--center {
+         &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+           text-align: center;
+         }
+       }
+     }
+    &-md {
+      &--left {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-md-down) {
+            text-align: left;
+          }
+        }
+      }
+      &--right {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-md-down) {
+            text-align: right;
+          }
+        }
+      }
+      &--center {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-md-down) {
+            text-align: center;
+          }
+        }
+      }
+    }
+    &-sm {
+      &--left {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-sm-down) {
+            text-align: left;
+          }
+        }
+      }
+      &--right {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-sm-down) {
+            text-align: right;
+          }
+        }
+      }
+      &--center {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-sm-down) {
+            text-align: center;
+          }
+        }
+      }
+    }
+    &-xs {
+      &--left {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-xs-down) {
+            text-align: left;
+          }
+        }
+      }
+      &--right {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-xs-down) {
+            text-align: right;
+          }
+        }
+      }
+      &--center {
+        &, &[data-resp-md], &[data-resp-sm], &[data-resp-xs] {
+          @media only screen and(max-width: $screen-xs-down) {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  /* end text align */
+}
+
+/* DOCUMENTATION */
+/*
+//modifiers
+from .tt-promobox
+=== sizes ===
+- .tt-promobox__size-[high, wide, square, auto]
+=== hover ===
+- .tt-promobox__hover-disable--[md, sm]
+
+from .tt-promobox__text
+=== color ===
+- .
+=== responsive text===
+- data-resp-[md, sm, xs]="[lg, md, sm]"
+=== positions ===
+- .tt-promobox__point-[lg, md, sm, xs]--[top, bottom, left, right, center, center-vertical, center-horizontal]
+=== aligns ===
+- .tt-promobox__align-[lg, md, sm, xs]--[left, right, center]
+
+//attributes
+from .tt-promobox
+- [data="tt-link-dbclick]     //prevent default in first click from links in touch devices
+*/

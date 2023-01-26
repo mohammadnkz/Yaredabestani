@@ -1,0 +1,23 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-payment-opt {
+  margin-left: -12px;
+  margin-right: -12px;
+  flex-wrap: wrap;
+  @include display-flex();
+  li {
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  a {
+    @include display-flex();
+    align-items: center;
+  }
+  i {
+    font-size: 25px;
+  }
+}

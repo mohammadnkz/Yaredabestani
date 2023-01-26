@@ -1,0 +1,134 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.form-control {
+  @at-root {
+    input[type='text']#{&},
+    input[type='email']#{&},
+    input[type='search']#{&},
+    input[type='password']#{&},
+    input[type='tel']#{&},
+    textarea#{&},
+    select#{&} {
+      padding: 12px 20px;
+      border-radius: 0;
+      min-height: 46px;
+      border: solid 1px transparent;
+      border-radius: 0;
+      font-weight: $fw--bold;
+      @include box-shadow(none, !important);
+      &::-webkit-input-placeholder,
+      ::-moz-placeholder,
+      &:-ms-input-placeholder,
+      &:-moz-placeholder {
+        font-weight: $fw--bold;
+        font-size: $font-size--sm;
+      }
+    }
+    textarea#{&},
+    select#{&} {
+      font-weight: $fw--bold;
+      font-size: $font-size--sm;
+    }
+    textarea#{&} {
+      resize: none;
+    }
+    select#{&} {
+      cursor: pointer;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      &::-ms-expand {
+        display: none;
+      }
+    }
+  }
+}
+
+.tt-input {
+  position: relative;
+  &__t-valid {
+    &-true,
+    &-false {
+      display: none;
+      margin-top: 4px;
+      font-size: 12px;
+      i {
+        position: absolute;
+        top: 14px;
+        right: 16px;
+        font-size: 18px;
+      }
+    }
+  }
+  &-valid--true &__t-valid-true {
+    display: block;
+  }
+  &-valid--false &__t-valid-false {
+    display: block;
+  }
+}
+
+.tt-select {
+  position: relative;
+  display: block;
+  margin: 0;
+  &::before {
+    position: absolute;
+    content: '\e824';
+    font-size: 8px;
+    top: 50%;
+    right: 15px;
+    margin-top: -3px;
+    pointer-events: none;
+    @include _myfont_styles();
+  }
+  select {
+    display: block;
+    width: 100%;
+    padding-right: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+
+.tt-checkbox {
+   span {
+     font-size: $font-size;
+     cursor: pointer;
+     @include _myfont_styles();
+     &::before {
+       content: '\e815';
+     }
+   }
+   input {
+     display: none;
+     &:checked + span::before {
+       content: '\e814';
+     }
+   }
+   p {
+     display: inline;
+   }
+ }
+
+.tt-checkbox-circle {
+  span {
+    border: solid 1px transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    @include square(20px);
+    @include _flex-center();
+    @include display-flex();
+  }
+  input {
+    display: none;
+    &:checked + span::before {
+      @include _myfont_styles();
+      content: '\e8fb';
+      font-size: 10px;
+    }
+  }
+}

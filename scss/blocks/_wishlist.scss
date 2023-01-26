@@ -1,0 +1,129 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-wishlist {
+  position: relative;
+  margin-bottom: 110px;
+  &__products {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border-top: solid 1px transparent;
+    border-bottom: solid 1px transparent;
+  }
+  &__footer {
+    text-align: center;
+    .btn {
+      width: 100%;
+      min-height: 56px;
+      @media only screen and (min-width: $screen-sm) {
+        max-width: 170px;
+      }
+      i {
+        margin-right: 10px;
+        font-size: $font-size--sm;
+      }
+    }
+  }
+  &__empty {
+    text-align: center;
+    font-size: $font-size--lg;
+    margin-bottom: 0;
+  }
+  &__product {
+    font-size: $font-size--sm;
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+    &-example {
+      display: none;
+    }
+    [class^='col-'] {
+      align-items: center;
+      @include display-flex();
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4){
+        @media only screen and (max-width: $screen-md-down) {
+          margin-top: 16px;
+        }
+      }
+      &:nth-child(2) {
+        flex-wrap: wrap;
+      }
+    }
+    &_image {
+      @media only screen and (min-width: $screen-sm) {
+        width: 174px;
+        min-width: 174px;
+        margin-right: 40px;
+      }
+      @media only screen and (max-width: $screen-sm-down) {
+        width: 100px;
+        min-width: 100px;
+        margin-right: 12px;
+      }
+      a {
+        display: block;
+      }
+      img {
+        border: solid 2px transparent;
+      }
+    }
+    &_info {
+      p {
+        margin-bottom: 0;
+      }
+      a {
+        p {
+          font-size: $font-size--sm;
+          font-weight: $fw--bold;
+        }
+      }
+      & > p {
+        font-size: 12px;
+        &:first-of-type {
+          margin-top: 10px;
+        }
+        span {
+          font-weight: $fw--extra-bold;
+        }
+      }
+    }
+    &_price {
+      font-size: 25px;
+      line-height: 1;
+    }
+    &_status {
+      @media only screen and (min-width: $screen-xs) {
+        margin: 0 auto;
+      }
+      span {
+        font-weight: $fw--bold;
+      }
+    }
+    &_to-cart {
+      @media only screen and (min-width: $screen-xs) {
+        margin-left: auto;
+      }
+      @media only screen and (max-width: $screen-sm-down) {
+        width: 100%;
+        max-width: 170px;
+      }
+      .btn {
+        margin-right: 24px;
+      }
+    }
+    &_del {
+      @media only screen and (min-width: $screen-xs) {
+        margin-right: 8px;
+        margin-left: auto;
+      }
+      @media only screen and (max-width: $screen-sm-down) {
+        margin-left: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-subcategory {
+  width: 100%;
+  align-items: center;
+  @include display-flex();
+  @media only screen and (min-width: $screen-md) {
+    margin-top: 60px;
+  }
+  @media only screen and (max-width: $screen-md-down) {
+    margin-top: 30px;
+  }
+  img {
+    margin-right: 20px;
+    border-radius: 50%;
+    @media only screen and (min-width: $screen-md) {
+      max-width: 130px;
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      max-width: 105px;
+    }
+    @media only screen and (min-width: $screen-xs) and (max-width: 600px) {
+      max-width: 80px;
+    }
+    @media only screen and (min-width: $screen-sm) and (max-width: 840px) {
+      max-width: 80px;
+    }
+    @media only screen and (min-width: 1400px) and (max-width: 1500px) {
+      max-width: 80px;
+    }
+  }
+  p {
+    display: inline;
+    margin: 0;
+    font-weight: $fw--bold;
+  }
+  span {
+    font-weight: $fw--bold;
+  }
+}

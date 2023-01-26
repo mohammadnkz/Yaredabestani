@@ -1,0 +1,25 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-sticky-block {
+  @media only screen and (min-width: $screen-md) {
+    will-change: min-height;
+  }
+  @media only screen and (max-width: $screen-md-down) {
+    position: static !important;
+    height: auto !important;
+  }
+  &__inner {
+    @media only screen and (min-width: $screen-md) {
+      will-change: position, transform;
+      @include translate(0, 0);
+      @include translate3d(0, 0, 0);
+    }
+    @media only screen and (max-width: $screen-md-down) {
+      position: static !important;
+      width: 100% !important;
+      @include transform(none, !important);
+    }
+  }
+}

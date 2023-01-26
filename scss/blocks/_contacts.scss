@@ -1,0 +1,53 @@
+/**
+ * (c) Tonytemplates Ltd, https://www.tonytemplates.com/support@tonytemplates.com
+ */
+
+.tt-contacts {
+  margin-top: 90px;
+  margin-bottom: 100px;
+  &__adress {
+    margin-bottom: 90px;
+  }
+  &__map {
+    max-height: 670px;
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 70%;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      -webkit-filter: grayscale(90%);
+      filter: grayscale(90%);
+      @include _stretch-block();
+    }
+    &:hover {
+      iframe {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+      }
+    }
+  }
+  &__info {
+    min-height: 100%;
+    @include display-flex();
+    @include _flex-center();
+    &_text {
+      padding-top: 40px;
+      margin-bottom: 40px;
+    }
+    p {
+      font-weight: $fw--bold;
+      line-height: 1.3;
+    }
+  }
+  &__form {
+    &_title {
+      margin-bottom: 8px;
+    }
+    &_inputs {
+      margin-top: 54px;
+    }
+  }
+}
